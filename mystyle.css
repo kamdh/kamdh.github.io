@@ -1,0 +1,29 @@
+body {
+    background-color: #1D1B1D;
+    color: #BFAB0A; 
+    font: normal 100% tahoma, georgia, sans-serif;
+}
+
+a {
+    color: #DB9C58; 
+    text-decoration: none;
+}
+a:hover {text-decoration: underline;}
+span.logo {
+    background-color: #127260;
+    padding: 5px;
+}
+
+#outside {margin: auto; width: 800px; }
+#logo {
+    margin-bottom: 15px; padding: 15px; 
+    border: solid 2px #127260; 
+    background: url(valle2.jpg) no-repeat;
+}
+#logo h1 {
+    margin: 0; padding: 0; 
+    color: #740B30; 
+    text-align: left; letter-spacing: -1px; font-variant: small-caps; 
+}
+#topnav {text-align: center;}
+#footer {text-align: right;}

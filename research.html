@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1252" />
+<meta name="description" content="" />
+<meta name="generator" content="HTML-Kit" />
+<title>KDH - research</title>
+<link href="mystyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="outside">
+<div id="logo">
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h1>
+<span class="logo">
+Kameron Decker Harris</span></h1>
+</div>
+
+<!-- Starting Top Navigation -->
+<div id="topnav"> 
+  <a href="index.html">About</a> |
+  <a href="#">Research</a> |
+  <a href="publist.html">Publications</a> |
+  <a href="teaching.html">Teaching</a> |
+  <a href="kdeckerharris-cv.pdf">CV</a> |
+  <a href="misc.html">Miscellaneous</a>
+</div>
+
+<!-- Starting Body Text -->
+<div id="content">
+  <h3>My Research</h3>
+
+  <p>
+    I am a computational scientist and applied mathematician
+    with an interest in <i><b>networked dynamical systems</b></i>,
+    in particular <i><b>neural systems</b></i>.
+    These systems are often adaptive, meaning they can learn from
+    their environment, and exhibit complex behavior.
+  </p>
+  <p>
+    Methodologies that I apply include:
+    <ul>
+      <li />Statistical inference &amp; machine learning
+      <li />Dimensionality reduction
+      <li />Dynamical systems
+      <li />Graph &amp; network theory.
+    </ul>
+    In practice, this means my collaborators and I mostly work with:
+    <ul>
+      <li />Computer modeling
+      <li />Linear algebra &amp; matrix computations
+      <li />Differential equations
+      <li />Probability &amp; analysis.
+    </ul>
+    We also do our best to <i><b>know the biology</b></i> of the systems we study.
+
+    See my <a href="publist.html">Publications</a> page for papers.
+  </p>
+
+  <h3>Current Projects</h3>
+
+  <p><b>Human electrocorticography recordings (ECoG)</b>
+    I am analyzing human ECoG data in collaboration
+    with <a href="https://www.bingbrunton.com/data">Bing Brunton's lab</a>.
+    These are long-term (about a week long) recordings with multiple
+    electrodes placed on the surface of the brain.
+    In addition, we have a team annotating that data using simultaneously
+    audio and video which allows us to track the patients' behavior.
+    Stay tuned for updates!
+  </p>
+
+  <hr align="center" noshade="noshade" width="500"/>
+
+
+  <p><b>Brain network inference:</b>
+    Together with Stefan Mihalas and others at the 
+    <a href="http://alleninstitute.org/">
+      Allen Institute for Brain Science</a>,
+    I am improving the mathematical techniques used to
+    analyze tracing experiments.
+    In these experiments, 
+    mice are injected with a modified virus which travels along
+    axons and causes them to express green fluourescent protein,
+    highlighting which areas are targets of the injection site.
+    We use the spatial regularities and symmetries
+    of projections to "fill in" undersampled areas,
+    leading to unprecedentedly detailed whole-brain connectivity matrices.
+    <ul>
+      <li /> <a href="http://download.alleninstitute.org/publications/A_high_resolution_data-driven_model_of_the_mouse_connectome/">Download the voxel network</a>
+      <li /> Here is 
+        <a href="./posters/2016-12-1_NIPS_connectome.pdf">the poster
+        I presented at NIPS, 2016</a>.
+      <li /> I was a TA for the Summer Workshop on the Dynamic Brain in 2016: 
+        <a href="https://www.youtube.com/watch?v=OmYkj1FImpI">video</a>
+    </ul>
+    <!-- <ol> -->
+    <!--   <li />J Knox, KD Harris, N Graddis, JD Whitesell, H Zeng, JA Harris, -->
+    <!--   E Shea-Brown, S Mihalas. -->
+    <!--   High resolution data-driven model of the mouse connectome. -->
+    <!--   In review. 2018. -->
+    <!--   [<a href="https://doi.org/10.1101/293019">preprint</a>] -->
+    <!--   <li /> -->
+    <!--   KD Harris, S Mihalas, ET Shea-Brown.  -->
+    <!--   High resolution neural connectivity from incomplete tracing data -->
+    <!--   using nonnegative spline regression. -->
+    <!--   NIPS, 2016. -->
+    <!--   [<a href="https://arxiv.org/abs/1605.08031">arXiv</a>] -->
+    <!-- </ol> -->
+  </p>
+
+  <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/woKJgBmtyto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </center>
+
+  <img src="images/mouse_view.png" 
+       alt="A schematic of mesoscale connectivity inference" 
+       width="780px"
+       align="center" 
+       style="padding-top: 15px; 
+	      padding-bottom: 15px; 
+	      padding-right: 15px; 
+	      padding-left: 15px" />
+
+  <hr align="center" noshade="noshade" width="500"/>
+
+
+  <img src="images/prebot-model-fig.png" 
+       alt="Example output from my preBot model"
+       width="400px"
+       align="right" 
+       style="padding-top: 0px; 
+	      padding-bottom: 10px; 
+	      padding-right: 40px; 
+	      padding-left: 15px" />
+  <p><b>Respiratory rhythms:</b>
+    The pre-Botzinger complex (preBot) is an area of the brainstem
+    which is essential for breathing...
+    which is obviously an essential system for us animals!
+    This area contains a group of neurons which produce coordinated
+    rhythmic bursts of activity which drive motoneurons 
+    to produce inspiration (the inward breath).
+    Nearby areas produce the other phases of breathing, 
+    such as expiration, but none of them are as essential as preBot.
+    Thus, preBot is often called the <i>kernel</i> of the respiratory central
+    pattern generator.
+  </p>
+  <p>
+    Significant research has gone into identifying the properties of
+    neurons in this area, but there continues to be disagreement
+    about the mechanism of rhythmic bursting in preBot.
+    We are using models to test whether the preBot rhythm
+    is an example of emergent synchronization of neural activity.
+    We specifically look at the role of inhibition and network
+    connectivity in shaping the resulting rhythm.
+  <ul>
+    <li /> This work is a collaboration with 
+    <a href="http://neurosurgery.washington.edu/research/labs/ramirez.asp">
+      Nino Ramirez's group</a> 
+    at Seattle Children's Research Institute.
+  </ul>
+  <!-- <ol> -->
+  <!--   <li /> <a href="videos/201512101124-Banff-Harris.mp4">A lecture</a> -->
+  <!--   I gave on our research at the Banff International Research Station. -->
+  <!--   <li /> KD Harris, T Dashevskiy, J Mendoza, AJ Garcia III,  -->
+  <!--   J-M Ramirez, E Shea-Brown. -->
+  <!--   Differential roles for inhibition in excitatory rhythm generators. -->
+  <!--   Submitted, 2016. -->
+  <!--   [<a href="https://arxiv.org/abs/1610.04258">arXiv</a>] -->
+  <!-- </ol> -->
+  </p>
+
+  <hr align="center" noshade="noshade" width="500"/>
+
+  <img src="images/contagion-fig.png" alt="Network spreading cartoon" 
+       width="400px"
+       align="right" 
+       style="padding-top: 15px; 
+	      padding-bottom: 15px; 
+	      padding-right: 15px; 
+	      padding-left: 15px" />
+  <p>
+    <b>Random graphs and percolation/contagion:</b>
+    We examine the topology of random networks with
+    arbitrary correlations between nodes of different types.
+    From this, we can determine whether spreading is possible
+    for different generalized contagion/diffusion processes.
+    Inhomogeneous response functions among nodes as well as the
+    ability for nodes to "turn off" can lead to more complex
+    behavior.
+  </p>
+  <p>
+    Working with <a href="http://www.math.washington.edu/~dumitriu/">Ioana Dumitriu</a> and 
+    <a href="https://people.math.gatech.edu/~gbrito3/">Gerandy Brito</a>,
+    we've found semi-analytical techniques
+    for computing eigenvalue spectra of random graphs.
+    We can numerically solve recursive equations 
+    to find the spectral distribution.
+    This technique works even for random graph models with complicated 
+    block structure, cases where the equations appear too difficult
+    to solve by hand.
+    We have also studied the spectral gap in certain bipartite, biregular random graph families,
+    with applications to matrix completion, community detection, and expander codes.
+    <!-- <ol> -->
+    <!--   <li /> -->
+    <!--   G Brito, I Dumitriu, KD Harris. Spectral gap in random bipartite biregular graphs and applications. In review. 2018. -->
+    <!--   [<a href="https://arxiv.org/abs/1804.07808">preprint</a>] -->
+    <!--   <li />  -->
+    <!--   KD Harris, PS Dodds, CM Danforth. -->
+    <!--   Dynamical influence processes on networks:  -->
+    <!--   General theory and applications to social contagion. -->
+    <!--   Phys Rev E 88, 022816. 2013. -->
+    <!--   [<a href="./papers/2013-chaotic-contagion-theory.pdf">reprint</a>] -->
+    <!--   [<a href="http://link.aps.org/doi/10.1103/PhysRevE.88.022816">journal</a>] -->
+    <!--   [<a href="http://arxiv.org/abs/1303.1414">arxiv</a>] -->
+    <!--   <li />  -->
+    <!--   PS Dodds, KD Harris, CM Danforth.  -->
+    <!--   Limited Imitation Contagion on Random Networks:  -->
+    <!--   Chaos, Universality, and Unpredictability. -->
+    <!--   Phys Rev Lett 110, 158701. 2013. -->
+    <!--   [<a href="./papers/2013-chaotic-contagion-prl.pdf">reprint</a>] -->
+    <!--   [<a href="http://link.aps.org/doi/10.1103/PhysRevLett.110.158701">journal</a>] -->
+    <!--   [<a href="http://arxiv.org/abs/1208.0255">arXiv</a>] -->
+    <!--   <li />  -->
+    <!--   JL Payne, KD Harris, PS Dodds.  -->
+    <!--   Exact solutions for social and biological contagion models  -->
+    <!--   on mixed directed and undirected, degree-correlated random -->
+    <!--   networks.  -->
+    <!--   Phys Rev E 84, 016110. 2011. -->
+    <!--   [<a href="./papers/2011-contagion-exact-solns.pdf">reprint</a>]  -->
+    <!--   [<a href="http://arxiv.org/abs/1103.0056">arXiv</a>] -->
+    <!--   <li />  -->
+    <!--   PS Dodds, KD Harris, and JL Payne.  -->
+    <!--   Direct, physically motivated derivation of the contagion condition -->
+    <!--   for spreading processes on generalized random networks.  -->
+    <!--   Phys Rev E 83, 056122. 2011. -->
+    <!--   [<a href="http://www.uvm.edu/~kharris/papers/2011-contagion-condition.pdf">reprint</a>]  -->
+    <!--   [<a href="http://arxiv.org/abs/1101.5591">arXiv</a>] -->
+    <!--   <li />  -->
+    <!-- <a href="on-off-threshold/thesis.pdf">UVM Master's Thesis in  -->
+    <!--   Mathematics</a>, -->
+    <!-- <a href="on-off-threshold/">supplementary material</a> -->
+    <!-- </ol> -->
+  </p>
+
+  <img src="images/frame.png"
+       alt="Tripartite random regular frame graph schematic" 
+       width="300px"
+       align="center" 
+       style="padding-top: 15px; 
+	      padding-bottom: 15px; 
+	      padding-right: 5px; 
+	      padding-left: 5px;
+              background-color:white" />
+  <img src="images/tri_pA_0.125_pB_0.125_kAB_3_kAC_6_kBC_12.png"
+       alt="Tripartite random regular frame graph spectrum" 
+       width="465px"
+       align="center" 
+       style="padding-top: 15px; 
+	      padding-bottom: 15px; 
+	      padding-right: 0px; 
+	      padding-left: 15px" />
+
+
+  <hr align="center" noshade="noshade" width="500"/>
+
+  <h3 id="old">Older Research</h3>
+  
+  <p>These projects were started before my PhD.</p>
+
+
+    <img src="happiness/happiness.png" 
+         alt="County happiness, no thresholding" 
+	 width="400px"
+	 align="right" 
+	 style="padding-top: 15px; 
+		padding-bottom: 15px; 
+		padding-right: 15px; 
+		padding-left: 15px" />
+  <p>
+    <b>Happiness of online interactions:</b> 
+    Here we look at a basic measure of the happiness 
+    in large-scale texts. A psychological study called 
+    "Associative Norms for English Words" (ANEW) asked a
+    number of adults to assign a happiness value or
+    "valence" between 1 and 9 to 1035 common words. When considering
+    a large enough sample of text, the average valence
+    of the ANEW words contained therein can give a rough 
+    measure of the text's emotional content. This was recently
+    published in a 
+    <a href="http://www.uvm.edu/~cdanfort/research/dodds-danforth-johs-2009.pdf">
+      paper
+    </a>
+    by Danforth and Dodds in the Journal of Happiness Studies. 
+    Together with the group at the 
+    <a href="http://www.uvm.edu/storylab/about">Computational Story Lab</a>
+    we expanded this study to the social networking site Twitter.
+
+    <ul>
+      <li /> <a href="http://www.hedonometer.org">Hedonometer</a> is a website I helped design which
+      allows users to interactively explore these data
+    </ul>
+    
+    <!-- <ol> -->
+    <!--   <li /> -->
+    <!--   PS Dodds, EM Clark, S Desu, MR Frank, AJ Reagan, JR Williams,  -->
+    <!--   L Mitchell, KD Harris, IM Kloumann, JP Bagrow, K Megerdoomian,  -->
+    <!--   MT McMahon, BF Tivnan, CM Danforth. -->
+    <!--   Human language reveals a universal positivity bias. -->
+    <!--   PNAS 112(8), 2389–2394. 2015. -->
+    <!--   [<a href="http://www.pnas.org/content/early/2015/02/04/1411678112.abstract"> -->
+    <!--     journal</a>] -->
+    <!--   [<a href="http://arxiv.org/abs/1406.3855">preprint</a>] -->
+    <!--   [<a href="http://www.pnas.org/content/early/2015/05/20/1502909112.extract">critique by Garcia et al.</a>] -->
+    <!--   [<a href="http://www.pnas.org/content/early/2015/05/20/1505647112.extract">response to Garcia et al.</a>] -->
+    <!--   <li />L Mitchell, MR Frank, KD Harris, PS Dodds, CM Danforth. -->
+    <!--   The Geography of Happiness: Connecting Twitter sentiment -->
+    <!--   and expression, demographics, and -->
+    <!--   objective characteristics of place. -->
+    <!--   PLoS ONE 8(5): e64417. 2013. -->
+    <!--   [<a href="http://dx.doi.org/10.1371/journal.pone.0064417">journal</a>] -->
+    <!--   [<a href="http://arxiv.org/abs/1302.3299">arXiv</a>] -->
+    <!--   <li />  -->
+    <!--   CA Bliss, IM Kloumann, KD Harris, CM Danforth, PS Dodds. -->
+    <!--   Twitter reciprocal reply networks exhibit assortativity with -->
+    <!--   respect to happiness. -->
+    <!--   Journal of Computational Science 3(5), 388–397. 2012. -->
+    <!--   [<a href="http://dx.doi.org/10.1016/j.jocs.2012.05.001">journal</a>] -->
+    <!--   [<a href="http://arxiv.org/abs/1112.1010">arXiv</a>] -->
+    <!--   <li />  -->
+    <!--   IM Kloumann, CM Danforth, KD Harris, CA Bliss, PS Dodds.  -->
+    <!--   Positivity of the English language.  -->
+    <!--   PLoS ONE 7(1): e29484. 2012. -->
+    <!--   [<a href="http://dx.doi.org/10.1371/journal.pone.0029484">journal</a>] -->
+    <!--   [<a href="http://arxiv.org/abs/1108.5192">arXiv</a> (preferred)] -->
+    <!--   <li />  -->
+    <!--   PS Dodds, KD Harris, IM Kloumann, C Bliss, CM Danforth.  -->
+    <!--   Temporal patterns of happiness and information in a global -->
+    <!--   social network: Hedonometrics and Twitter.  -->
+    <!--   PLoS ONE 6(12): e26752. 2011. -->
+    <!--   [<a href="http://dx.doi.org/10.1371%2Fjournal.pone.0026752">journal</a>]  -->
+    <!--   [<a href="http://arxiv.org/abs/1101.5120">arXiv</a> (preferred)] -->
+    <!-- </ol> -->
+  </p>
+
+  <hr align="center" noshade="noshade" width="500"/>
+
+  <p><b>Chaotic convection, a platform for data assimilation:</b> 
+    I worked with   
+    <a href="http://www.uvm.edu/~cdanfort/">Chris Danforth</a>, 
+    <a href="http://www.uvm.edu/~dhitt/">Darren Hitt</a>,
+    <a href="http://www.uvm.edu/~nallgaie/">Nick Allgaier</a>,
+    and El Hassan Ridouane
+    to build and analyze a physical analog of 
+    the 1963 Lorenz system, the first example of deterministic chaos.
+    It's called a thermosyphon and is a type of non-mechanical
+    heat pump or convection loop. 
+    We use a combination of data assimilation and       
+    ensemble forecasting methods to predict the occurance of flow       
+    reversals we call regime chnages. I've uploaded a       
+    <a href="thermosyphon/butterfly.mp4">cool video</a> 
+    that shows one measure of the system's stability on the attractor. 
+    Here is a <a href="thermosyphon/2009src.pdf">presentation</a>
+    outlining our research that was
+    given at the UVM Student Research Conference. 
+
+    <!-- <ol> -->
+    <ul>
+      <!-- <li />  -->
+      <!-- KD Harris, E-H Ridouane, D Hitt, and CM Danforth.  -->
+      <!-- Predicting flow reversals in chaotic natural -->
+      <!-- convection using data assimilation. -->
+      <!-- Tellus A 64, 17598. 2012.  -->
+      <!-- [<a href="./papers/2012-flow-reversals.pdf">reprint</a>] -->
+      <!-- [<a href=" http://dx.doi.org/10.3402/tellusa.v64i0.17598">journal</a>] -->
+      <!-- [<a href="http://arxiv.org/abs/1108.5685">arXiv</a>] -->
+      <!-- <li />  N Allgaier, KD Harris, CM Danforth.  -->
+      <!-- Empirical Correction of a Toy Climate Model.  -->
+      <!-- Phys Rev E 85, 026201. 2012. -->
+      <!-- [<a href="./papers/2012-empirical-correction.pdf">reprint</a>] -->
+      <!-- [<a href="http://arxiv.org/abs/1107.2690">arXiv</a>] -->
+      <li /> My undergraduate
+      <a href="thermosyphon/thesis.pdf">honors thesis</a>
+    </ul>
+    <!-- </ol> -->
+  </p>
+
+  <img src="thermosyphon/data_assim_cartoon.png" 
+	   alt="Cartoon of the data assimilation process" 
+	   width="400px" align="center" 	 	 
+	   style="padding-top: 15px;
+			  padding-bottom: 15px; 
+			  padding-right: 15px;
+			  padding-left: 15px" />
+
+    <hr align="center" noshade="noshade" width="500"/>
+
+  <img src="leaves/maple.png" alt="Simulated leaf" width="300px" 
+       align="left" 
+       style="padding-top: 15px;
+         padding-bottom: 15px; 
+			  padding-right: 40px; 
+			  padding-left: 15px" />
+
+  <br /><br />
+
+  <p>
+    <b>Leaf vascular networks:</b> 
+    Also known as venation patterns, a       
+    number of mathematical models have been proposed to explain the       
+    branching structures of leaves.       
+    <a href="http://www.math.ucdavis.edu/~qlxia/">Qinglan Xia</a> 
+    proposed a model in 2007 which grows each leaf while
+    simultaneously minimizing a cost function. 
+    This approach produces both the vascular network and 
+    boundary of the leaf. Varying the parameters of the
+    model can produce many of the shapes observed in nature, 
+    including that of the maple leaf (left, my reporduction). 
+    I began this as a project in the networks classes of 
+    <a href="http://www.uvm.edu/~pdodds/">Peter Dodds</a>.
+  </p>
+  <p>
+    <ul>
+      <li /> <a href="papers/xia-term-paper.pdf">Term paper</a> on the project
+     </ul>
+  </p> <br /><br />
+
+  <hr align="center" noshade="noshade" width="500"/>
+
+
+  <br /><br /><br />
+</div>
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=6713298; 
+var sc_invisible=1; 
+var sc_security="9e979868"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div
+class="statcounter"><a title="drupal counter"
+class="statcounter"
+href="http://statcounter.com/drupal/"><img
+class="statcounter"
+src="http://c.statcounter.com/6713298/0/9e979868/1/"
+alt="drupal counter" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>
+

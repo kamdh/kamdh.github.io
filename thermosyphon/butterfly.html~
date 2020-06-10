@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Butterfly</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+</head>
+
+<body style="background-color: rgb(238, 238, 238);">
+
+<object data="butterfly.mp4" type="video/mpeg"></object>
+
+This is a view of the Lorenz attractor created in MATLAB. The color of the points represents the average rate of growth of bred vectors (local Lyapunov exponents) computed over m=8 time steps. Note how the orbit spirals into and is sent away from from the repelling fixed point in one of the "wings".
+
+</body></html>

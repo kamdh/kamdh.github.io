@@ -1,0 +1,15 @@
+lsPackage/LatinSquare.java
+This defines a class for latin squares with some testing functions.
+
+lsPackage/Blocks.java
+This is the class for sub-blocks which can be rotated and combined to form a
+Sudoku-legal latin square.
+
+Testls.java and TestBlock.java
+Testing the functions.
+
+You can use and modify this code for any non-commercial purposes, so long as
+you let me know.
+
+-Kameron Decker Harris
+-29 Oct. 2006

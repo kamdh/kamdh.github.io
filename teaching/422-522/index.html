@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>AMATH 422 / 522</title>
+<style type="text/css">
+<!--
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #666666;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+.oneColElsCtr #container {
+	width: 50em;
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.oneColElsCtr #mainContent {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+}
+-->
+</style>
+</head>
+
+<body class="oneColElsCtr">
+
+<div id="container">
+  <div id="mainContent">
+    <h1>
+      Introduction to Computational Models in Biology<br />
+    AMATH 422/522</h1>
+<!--    <h2>Please check out course content and (welcoming) level below to make sure this is the right course for what you're after -- <strong>we assume only that we are starting with a working knowledge of calculus, together with a desire to learn more about the underlying science, mathematics, or both</strong>. Feel free to drop me any questions.</h2> 
+    <h2>MATLAB will be the "official" course language this year (some R materials still available as an optional bonus).-->
+    <p>
+      Fall 2017<br />
+      MW 4:30-5:50 <a href="http://depts.washington.edu/aslab">CMU Room B027</a>
+      of ICL lab, Communications Building
+    </p>
+    <p>
+      COURSE DISCUSSION BOARD: Piazza
+      (link should arrive in email, contact me if not)
+    </p>
+    <p>
+      Here, you will learn about models that arise in the life
+      sciences and how they're analyzed using modern mathematical and
+      computational techniques.  We will cover statistical models,
+      discrete- and continuous- time dynamical models, and stochastic
+      models.  Applications will sample a wide range of scales, from
+      biomolecules to population dynamics, with an emphasis on common
+      mathematical concepts and computational techniques.  Throughout,
+      our themes will include interpretation of existing data and
+      predictions for new experiments.
+    </p>
+    <p>
+      MATLAB will be used for numerical computation, visualization,
+      and data analysis -- and mathematical tools taught in parallel
+      with their computational implementation.
+      No prior programming experience is assumed, but it will be useful.
+      <!-- This course is designed for students in a wide variety of departments and with backgrounds across the sciences.  We assume only that we are starting with a working knowledge of calculus , together with a desire to learn more about the underlying science, mathematics, or both. -->
+      <!-- We may introduce and use PYTHON toward the end of the quarter. -->
+    </p>
+   
+<h1><img src="spine.jpg" width="540" height="246" /></h1>
+Images:  Terrence Sanger, Medical College of Georgia,
+Steve Coombes, Yulia Timofeeva.
+
+<br />
+
+
+<p> <center>
+<table border="1" cellpadding=5 width=300>
+<tr><th>Instructor</th> </tr>
+<tr><td>
+<a href="http://students.washington.edu/kamdh">Kameron Decker Harris</a>
+<!-- <br /> -->
+<!-- kamdh at your favorite .edu domain -->
+</td></tr>
+<tr><td>325 Lewis Hall</td></tr>
+<tr>
+  <td><p>Office hours:</p>
+    <p>Monday, 1-2:30 pm in Lewis 320 </p>
+    <!-- <p>1-2, 11/15</p> -->
+    <!-- <p>2-3, 11/29<br /> -->
+    <!-- </p> -->
+    <!-- W after class -6:40 PM Guggenheim 415F --></td> 
+</tr>
+<tr>
+  <td><p><a href="hw/">Homework files here</a></p>
+  </td>
+</tr>
+</table>
+    </td>
+<td width="12"></td>
+    <tr>
+  </table></center> </p>
+
+  <p>
+    <strong>Required text:</strong><br />
+    <a href="http://press.princeton.edu/titles/8124.html">
+      Dynamic Models in Biology</a>
+    by Stephen Ellner and John Guckenhiemer (<strong>EG</strong> below)
+  </p>
+  <!-- <p> -->
+  <!--   <strong>Optional reference:</strong> -->
+  <!--   "Matlab: A Practical Introduction to Programming and Problem Solving," -->
+  <!--   by Stormy Attaway is a very helpful programming guide and reference, for use as needed. -->
+  <!-- </p> -->
+  <p>
+    <a href="lecture_codes_for_website"><strong>Codes and data for lectures and lab exercises</strong> </a>
+  </p>
+
+<h2>Syllabus and readings</h2>
+<b>(1) Course overview, introduction to programming, and
+  introduction to mathematical models in the life sciences.</b>
+<ul>
+  <li>Modeling objectives: prediction and theory development</li>
+  <li>Introduction to programming: vectors, matrices, loops, logic, plotting </li>
+  <li>Exponential and chaotic population growth in a simple system</li>
+</ul>
+<blockquote>
+  READINGS:
+  <ul>
+    <li> EG Chapter 1 -- overview of biological models</li>
+  </ul>                       
+  TUTORIALS: For those who are new to MATLAB
+  <ul>
+    <li> <a href="materials/amath_422_matlab_intro_part_1_2015.pdf">Lab Manual Part 1: Intro to Matlab</a></li>
+    <li><a href="materials/amath_422_matlab_intro_part_2_2015.pdf">Lab Manual Part 2: Matrices in Matlab</a></li>
+    <li><a href="materials/amath_422_matlab_intro_part_3_2015.pdf">Lab Manual Part 3: More Matlab</a></li>
+  <!-- <li> <a href="tutorials_and_lab_manual/Lab_Project_Nonlinear_cell_reproduction_MATLAB_2015.pdf">Matlab exercise:  Nonlinear cell reproduction (and chaos!)</a> </li> -->
+</ul>  
+</blockquote>
+
+<!-- <ul>
+                <li><strong>LECTURES 1-2</strong></li>
+                <li><a href="materials/lec_1_cell_reproduction_and_modeling_concepts.PDF"> lec_1_cell_reproduction_and_modeling_concepts.PDF </a></li>
+                <li><a href="lecture_codes"> MATLAB and R codes from lecture</a></li>
+      </ul>
+              </dt>
+      <li><b> Lectures 2-3: <a href="AMATH410_W08_Lec2-3_compartmental_models.pdf">AMATH410_W08_Lec2-3_compartmental_models.pdf</a>
+	  </b> </li>
+    </ul>
+</dd>
+-->
+
+<b>(2) Matrix models -- discrete time, linear maps</b> (2 weeks)
+<ul>
+  <li>Introduction to population biology</li>
+  <li>Euler-Lotka formula and root-finding for age-class models:
+    &quot;Leslie Matrices&quot;</li>
+  <li>Matrix multiplication and eigenvalues </li>
+  <li>The Perron-Frobenius Theorem,
+    dominant eigenvalues and population growth</li>
+  <li>Eigenvalue sensitivity formulas and applications in ecology</li>
+</ul>
+                    
+<blockquote>
+  <p>READINGS: </p>
+  <ul>
+    <li> EG Chapter 2 <a href="materials/chap2_summary.pdf">Summary here</a></li>
+    <li> Literature: <a href="materials/crouse_et_al_sea_turtles.pdf"> crouse.pdf </a></li>
+  </ul>                       
+<!--        CODES:
+         <ul>
+         </ul> --> 
+  <p>EXTRA TUTORIALS:</p>
+  <ul>
+    <!--                  <li><a href="materials/linear_algebra_review_overview.pdf">lninear_algebra_review_overview.pdf</a></li>-->
+    <li> For those wanting a Linear Algebra tutorial / referesher:
+      <a href="materials/LinearAlgebraOverview_from_simoncelli.pdf">geometric introduction to linear algebra by Eero Simoncelli (SVD section optional)</a>
+    </li>
+<!--                  <li><a href="tutorials_and_lab_manual/amath_422_matlab_intro_part_2_2015.pdf">Lab Manual Part 2: Matrices, eigenvalues, and eigenvectors in MATLAB</a></li>-->
+<!--                  <li><a href="materials/tutorial_on_eigenvalues_and_eigenvectors.pdf">notes_computing_on_eigenvalues_and_eigenvectors in matlab</a></li>-->
+  </ul>
+</blockquote>
+
+<b>(3) Stochastic models</b> (2.5 weeks)   
+<ul>
+  <li>Introduction to electrical membranes and neurons</li>
+  <li>Random variables and probability</li>
+  <li>Channel statistics: the binomial distribution </li>
+  <li>Transition probabilities and Markov chains</li>
+  <li>Equilibrium states -- dominant eigenvalues and Perron-Frobenius return! </li>
+  <li>Central limit theorem and deterministic limits </li>
+  <li>Applications to ion channels and reverse-engineering molecular configurations </li>
+  <!--      <li>Diffusion equation: applications in neuroscience of decision making </li>  -->
+  <!--  <li>Random walks and diffusion </li> -->
+</ul>
+                    
+<blockquote>
+  READINGS:
+  <ul>
+    <li> EG Chapter 3.1-3.3, EG Lab manual (section 11). </li>
+    <li>  <a href="materials/anderson_and_stevens.pdf">Anderson and Stevens (1973)</a></li>
+    <!-- Additional resources on stochastic ion channels:  (1) Foundations of Cellular Neurophysiology, by Johnston and Wu, (2) Introduction to Theoretical Neurobiology, Volume 2, by H. Tuckwell.-->
+  </ul>                       
+
+  <p>
+    EXTRA TUTORIALS: </p>
+  <ul>
+    <!--                  <li><a href="materials/linear_algebra_review_overview.pdf">linear_algebra_review_overview.pdf</a></li>-->
+    <li> <a href="materials/noteset-7-probability.pdf">Brief background on BASICS of probability models</a></li>
+  </ul>
+</blockquote>
+                
+<b> (4) Continuous time models, systems biology, and biological networks</b>
+(3 weeks)   
+
+<ul>
+  <li>Introduction to systems biology and genetic networks </li>
+  <li>Ordinary differential equations and vector fields --
+    visualizing flows in MATLAB</li>
+  <li>Nullclines, equilibria, and numerical root finding  </li>
+  <li>Numerical solution methods  </li>
+  <li>Stability and oscillations</li>
+  <li>Application:   genetic oscillators  </li>
+  <li>Application:   genetic switches </li>
+  <li> Stochastic differential equations and numerical methods  </li>
+  <li> Biological memory models and attractors  </li>
+</ul>
+
+<blockquote>
+  READINGS:
+  <ul>
+    <li> EG Chapter 4, 5.1-5.4, 5.7, 6.1-6.3. </li>
+    <li> <a href="materials/shen-orr_milo_mangan_alon_nature_02.pdf">Shen-Orr et al, network motifs 2002</a></li>
+    <li> <a href="materials/alon_review_2007.pdf"> Alon, Nature Reviews genetics 2007</a></li>
+    <li><a href="materials/saltelli_ratto_tarantola_campolongo_overview_of_sensitivity_and_HDMR_methods_chem_rev_05.pdf">High-Dimensional Model Representation review article, Saltelli et al</a></li>
+    <li> <a href="materials/oh_mesoscale_connectome.pdf"> Oh et al, Mesoscale brain connectome, Nature 2014</a></li>
+    <li>Some "rough" supplemental (or review) notes on ODEs </li>
+    <li> <a href="materials/noteset_11_ODEs_v2.pdf">noteset 1 on ODEs</a>  </li>
+    <li> <a href="materials/noteset_12_ODEs_2.pdf">noteset 2 on numerical methods for ODEs</a> </li>
+    <li> <a href="materials/noteset_13_ODEs_3.pdf">noteset 3 on stability and the Jacobian</a>  </li>
+    
+  </ul>                       
+</blockquote>   
+
+ <h2>Course structure and grading</h2>
+
+  <p>
+    Course grades are composed of:
+    Problem Sets 40%, Case study presentation 10%,
+    Project presentation 10%, Project paper 40%. 
+  </p>
+ 
+  <p>
+    Problem sets will be due on select Wednesdays (roughly every other week)
+    at the start of class.
+  </p>
+  <p>
+    Important formatting instructions: in your writeup please present
+    all material for a given problem together -- e.g. under
+    &quot;Problem II&quot; you'd have any and all code that you used
+    for that problem, a written answer (i.e., "the dominant eigenvalue
+    is 0.921"), plots that explain and back up your findings and
+    answers, and any analysis.  Then we'd go to the next problem.
+    (Not stapling all code for all problems together as an appendix at
+    the end.)  You may find the publish(code.m) command in MATLAB
+    helpful.  You can print out your codes and plots and intermingle
+    this with handwritten answers and explanations, or, again, some
+    have found the MATLAB "publish" function handy. Late policy: 50%
+    credit if turned in late but within 2 days of deadline; not
+    accepted otherwise.
+  </p>
+  <p><a href="materials/presentation_and_project_guidelines-2016.pdf">Case study, project, and presentation guidelines linked here!</a> </p>
+  <p>
+   Case study: Each group of students will give a brief in-class
+   presentation of a paper that applies the modeling and computational
+   techniques we have learned in the course.  Paper suggestions will
+   be provided. Guidelines and grading criteria will be distributed
+   and discussed in class in advance.
+  </p>
+  <strong>Presentation dates:  Nov 15 and 20.</strong> 
+  <p>
+    Project:  These case studies will be developed into course projects,
+    consisting of a  brief presentation and paper writeup.
+    <strong>Presentation dates: Dec. 4 and 6</strong>.
+    Papers due to my mailbox, Lewis Hall: <strong>MON. Dec. 11, 5 PM</strong>.
+  </p>
+  
+  <h2>Computing </h2>
+  <p>
+    In this course, we will make extensive use of the Matlab
+    (<a href="http://www.mathworks.com">The MathWorks, Inc</a>)
+    programming language.  As an OPTIONAL bonus, the textbook's
+    website also provides many codes in the language R, which has
+    closely related syntax and is used extensively in some
+    computational biology communities.
+  </p>
+  <p>
+    I recommend that you obtain a student copy of MATLAB
+    for use on your own machine.
+    Students can obtain a $30 license that will last until the end
+    of the school year
+    <a href="https://itconnect.uw.edu/wares/uware/matlab/">from
+      the UWare website</a>.
+  </p>
+
+  <p>
+    There is access to MATLAB at the
+    <a href="http://depts.washington.edu/aslab">ICL
+    labs on campus</a>.
+    Computers in B022 (across the hall from our classroom) are available
+    for drop-in use.
+  </p>
+  <p>
+    You may also use a remote desktop client to access MATLAB on the
+    Mechanical Engineering department's servers (any student, faculty,
+    or staff has free access).
+    <a href="https://www.me.washington.edu/computing/remotedesktop">
+      Instructions are available here</a>
+  </p>  
+</div>
+<!-- end #container -->
+</div>
+</body>
+</html>

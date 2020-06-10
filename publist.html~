@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+<style>
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 2px;
+    font: 20px sans-serif;
+    background: white;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+</style>
+
+<title>KDH - publications</title>
+<link href="mystyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="outside">
+<div id="logo">
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h1><span class="logo">Kameron Decker Harris</span></h1>
+</div>
+
+<!-- Starting Top Navigation -->
+<div id="topnav"> 
+  <a href="index.html">About</a> |
+  <a href="research.html">Research</a> |
+  <a href="#">Publications</a> |
+  <a href="teaching.html">Teaching</a> |
+  <a href="kdeckerharris-cv.pdf">CV</a> |
+  <a href="misc.html">Miscellaneous</a>
+</div>
+
+<!-- Starting Body Text -->
+<div id="content">
+  <br />
+
+  <p>
+    Here's a visualization of my paper-coauthor
+    collaboration network, thanks to <a href="https://floklimm.github.io/networkIllustration.html">Florian Klimm</a>.
+  </p>
+  <p>
+    It's a <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite graph</a>. 
+    The papers are orange and collaborators blue.
+  </p>
+  <!-- sweet collaboration graph! -->
+  <!--into this svg the illustration will be drawn -->
+  <svg width="800" height="600"></svg>
+  <!--  we call the d3 library -->
+  <script type="text/javascript" src="./js/d3.v4.min.js"></script>
+  <!--  this script does all the actual work -->
+  <script type="text/javascript" src="./js/forceLayoutTooltip.js"></script>
+
+  
+  <p>
+    You can also find this (with some redundancies) at <a href="http://scholar.google.com/citations?user=ClJ1ExwAAAAJ">Google Scholar Citations</a>.
+  </p>
+  In approximate reverse chronological order of publication/submission
+  <ol reversed>
+    <li />KD Harris, Y Zhu.
+    Deterministic tensor completion with hypergraph expanders.
+    E-print. 2019.
+    [<a href="https://arxiv.org/abs/1910.10692">preprint</a>]
+    <li />KD Harris. Additive function approximation in the brain.
+    NeurIPS Real Neurons and Hidden Units workshop. 2019.
+    [<a href="https://arxiv.org/abs/1909.02603">preprint</a>]
+    <li />SM Hirsh, KD Harris, JN Kutz, BW Brunton.
+      Centering Data Improves the Dynamic Mode Decomposition.
+    E-print. 2019.
+    [<a href="https://arxiv.org/abs/1906.05973">preprint</a>]
+    <li />KD Harris, A Aravkin, R Rao, BW Brunton.
+    Time-varying Autoregression with Low Rank Tensors.
+    In review. 2019.
+    [<a href="https://arxiv.org/abs/1905.08389">preprint</a>]
+    <li /> P Kürschner, S Dolgov, KD Harris, P Benner.
+    Greedy low-rank algorithm for smooth connectome regression.
+    In review. 2018.
+    [<a href="https://arxiv.org/abs/1808.05510">preprint</a>]
+    <li />G Brito, I Dumitriu, KD Harris.
+    Spectral gap in random bipartite biregular graphs 
+    and applications.
+    E-print. 2018.
+    [<a href="https://arxiv.org/abs/1804.07808">preprint</a>]
+    <li />J Knox, KD Harris, N Graddis, JD Whitesell, H Zeng, JA Harris,
+    E Shea-Brown, S Mihalas.
+    High resolution data-driven model of the mouse connectome.
+    Network Neuroscience 3(1), 217-236. 2019.
+    [<a href="https://doi.org/10.1162/netn_a_00066">journal</a>]
+    [<a href="https://doi.org/10.1101/293019">preprint</a>]
+    [<a href="https://github.com/AllenInstitute/mouse_connectivity_models">Supplemental code</a>]
+    <li /> KD Harris. This Brain Is a Mess:
+    Inference, Random Graphs, and Biophysics to Disentangle Neuronal Networks.
+    University of Washington Ph.D. Thesis. 2017.
+    [<a href="http://hdl.handle.net/1773/40831">thesis</a>]
+    [<a href="papers/Harris_washington_0250E_18044.pdf">local copy</a>]
+    <li /> KD Harris, T Dashevskiy, J Mendoza, AJ Garcia III, 
+    J-M Ramirez, E Shea-Brown.
+    Different roles for inhibition in the rhythm-generating respiratory network.
+    J Neurophysiology 118(4), 2070-2088. 2017.
+    [<a href="papers/2017-different-roles-inhibition.pdf">reprint</a>]
+    [<a href="http://jn.physiology.org/content/118/4/2070">journal</a>]
+    [<a href="https://arxiv.org/abs/1610.04258">arXiv</a>]
+    [<a href="https://github.com/kharris/prebotc-graph-model">Supplemental code</a>]
+    <li />
+    A Litwin-Kumar, KD Harris, R Axel, H Sompolinsky, LF Abbott.
+    Optimal Degrees of Synaptic Connectivity.
+    Neuron 93, 1153-1164. 2017.
+    [<a href="http://dx.doi.org/10.1016/j.neuron.2017.01.030">journal</a>]
+    [<a href="./papers/2017-optimal-connectivity.pdf">reprint</a>]
+    <li />
+    KD Harris, S Mihalas, ET Shea-Brown. 
+    Nonnegative spline regression of incomplete tracing data
+    reveals high resolution neural connectivity.
+    NIPS, 2016.
+    [<a href="https://arxiv.org/abs/1605.08031">arXiv</a>]
+    [<a href="https://github.com/kharris/high-res-connectivity-nips-2016">Supplemental code</a>]
+    <li />
+    PS Dodds, EM Clark, S Desu, MR Frank, AJ Reagan, JR Williams, 
+    L Mitchell, KD Harris, IM Kloumann, JP Bagrow, K Megerdoomian, 
+    MT McMahon, BF Tivnan, CM Danforth.
+    Human language reveals a universal positivity bias.
+    PNAS 112(8), 2389–2394. 2015.
+    [<a href="http://www.pnas.org/content/early/2015/02/04/1411678112.abstract">
+      journal</a>]
+    [<a href="http://arxiv.org/abs/1406.3855">preprint</a>]
+    [<a href="http://www.pnas.org/content/early/2015/05/20/1502909112.extract">critique by Garcia et al.</a>]
+    [<a href="http://www.pnas.org/content/early/2015/05/20/1505647112.extract">response to Garcia et al.</a>]
+    <li /> 
+    KD Harris, PS Dodds, CM Danforth.
+    Dynamical influence processes on networks: 
+    General theory and applications to social contagion.
+    Phys Rev E 88, 022816. 2013.
+    [<a href="./papers/2013-chaotic-contagion-theory.pdf">reprint</a>]
+    [<a href="http://link.aps.org/doi/10.1103/PhysRevE.88.022816">journal</a>]
+    [<a href="http://arxiv.org/abs/1303.1414">arxiv</a>]
+    <li />L Mitchell, MR Frank, KD Harris, PS Dodds, CM Danforth.
+    The Geography of Happiness: Connecting Twitter sentiment
+    and expression, demographics, and
+    objective characteristics of place.
+    PLoS ONE 8(5): e64417. 2013.
+    [<a href="http://dx.doi.org/10.1371/journal.pone.0064417">journal</a>]
+    [<a href="http://arxiv.org/abs/1302.3299">arXiv</a>]
+    <li /> 
+    PS Dodds, KD Harris, CM Danforth. 
+    Limited Imitation Contagion on Random Networks: 
+    Chaos, Universality, and Unpredictability.
+    Phys Rev Lett 110, 158701. 2013.
+    [<a href="./papers/2013-chaotic-contagion-prl.pdf">reprint</a>]
+    [<a href="http://link.aps.org/doi/10.1103/PhysRevLett.110.158701">journal</a>]
+    [<a href="http://arxiv.org/abs/1208.0255">arXiv</a>]
+    <li /> 
+    CA Bliss, IM Kloumann, KD Harris, CM Danforth, PS Dodds.
+    Twitter reciprocal reply networks exhibit assortativity with
+    respect to happiness.
+    Journal of Computational Science 3(5), 388–397. 2012.
+    [<a href="http://dx.doi.org/10.1016/j.jocs.2012.05.001">journal</a>]
+    [<a href="http://arxiv.org/abs/1112.1010">arXiv</a>]
+    <li /> 
+    KD Harris, E-H Ridouane, D Hitt, and CM Danforth. 
+    Predicting flow reversals in chaotic natural
+    convection using data assimilation.
+    Tellus A 64, 17598. 2012. 
+    [<a href="./papers/2012-flow-reversals.pdf">reprint</a>]
+    [<a href=" http://dx.doi.org/10.3402/tellusa.v64i0.17598">journal</a>]
+    [<a href="http://arxiv.org/abs/1108.5685">arXiv</a>]
+    <li /> 
+    N Allgaier, KD Harris, CM Danforth. 
+    Empirical Correction of a Toy Climate Model. 
+    Phys Rev E 85, 026201. 2012.
+    [<a href="./papers/2012-empirical-correction.pdf">reprint</a>]
+    [<a href="http://arxiv.org/abs/1107.2690">arXiv</a>]
+    <li /> 
+    IM Kloumann, CM Danforth, KD Harris, CA Bliss, PS Dodds. 
+    Positivity of the English language. 
+    PLoS ONE 7(1): e29484. 2012.
+    [<a href="http://dx.doi.org/10.1371/journal.pone.0029484">journal</a>]
+    [<a href="http://arxiv.org/abs/1108.5192">arXiv</a> (preferred)]
+    <li /> 
+    PS Dodds, KD Harris, IM Kloumann, C Bliss, CM Danforth. 
+    Temporal patterns of happiness and information in a global
+    social network: Hedonometrics and Twitter. 
+    PLoS ONE 6(12): e26752. 2011.
+    [<a href="http://dx.doi.org/10.1371%2Fjournal.pone.0026752">journal</a>] 
+    [<a href="http://arxiv.org/abs/1101.5120">arXiv</a> (preferred)]
+    <li /> 
+    JL Payne, KD Harris, PS Dodds. 
+    Exact solutions for social and biological contagion models 
+    on mixed directed and undirected, degree-correlated random
+    networks. 
+    Phys Rev E 84, 016110. 2011.
+    [<a href="./papers/2011-contagion-exact-solns.pdf">reprint</a>] 
+    [<a href="http://arxiv.org/abs/1103.0056">arXiv</a>]
+    <li /> 
+    PS Dodds, KD Harris, and JL Payne. 
+    Direct, physically motivated derivation of the contagion condition
+    for spreading processes on generalized random networks. 
+    Phys Rev E 83, 056122. 2011.
+    [<a href="http://www.uvm.edu/~kharris/papers/2011-contagion-condition.pdf">reprint</a>] [<a href="http://arxiv.org/abs/1101.5591">arXiv</a>]
+  </ol>
+
+  Unpublished
+  <ol reversed>
+    <li />
+    PS Dodds, KD Harris, JL Payne.
+    Direct, physically motivated derivation of triggering probabilities for
+    spreading processes on generalized random networks. 2011.
+    [<a href="http://arxiv.org/abs/1108.5398">e-print</a>]
+  </ol>
+
+</div>
+
+<!-- <div id="footer"> -->
+<!-- <h5>&copy; 2010 Kameron Decker Harris<br /> -->
+<!--   design "New York Minute" from <a href="http://www.oswd.org">oswd</a><br /> -->
+<!--   pallete "Break Through" from  -->
+<!--   <a href="http://www.colourlovers.com">Colour Lovers</a> -->
+<!-- </h5> -->
+<!-- </div> -->
+
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=6713298; 
+var sc_invisible=1; 
+var sc_security="9e979868"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div
+class="statcounter"><a title="drupal counter"
+class="statcounter"
+href="http://statcounter.com/drupal/"><img
+class="statcounter"
+src="http://c.statcounter.com/6713298/0/9e979868/1/"
+alt="drupal counter" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>
+
