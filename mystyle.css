@@ -16,13 +16,16 @@ span.logo {
 
 #outside {margin: auto; width: 800px; }
 #logo {
-    margin-bottom: 15px; padding: 15px; 
-    border: solid 2px #127260; 
-    background: url(valle2.jpg) no-repeat;
+    margin-bottom: 15px;
+    padding: 0px; 
+    background: url(valle2.jpg);
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 #logo h1 {
     margin: 0; padding: 0; 
-    color: #740B30; 
+    color: #f29027;
     text-align: left; letter-spacing: -1px; font-variant: small-caps; 
 }
 #topnav {text-align: center;}
