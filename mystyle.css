@@ -14,7 +14,7 @@ span.logo {
     padding: 5px;
 }
 
-#outside {margin: auto; width: 800px; }
+#outside {margin: auto; width: 95%; max-width: 800px}
 
 #logo {
     margin-bottom: 15px;
