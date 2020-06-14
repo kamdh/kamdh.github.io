@@ -29,9 +29,10 @@ span.logo {
     padding-bottom: 4px;
     /* margin: 0; padding: 0;  */
     color: #f29027;
-    text-align: left; letter-spacing: -1px; font-variant: small-caps; 
+    text-align: left; letter-spacing: -1px; font-variant: small-caps;
+    font-size: large;
 }
 
-#topnav {text-align: left; font-size: medium}
+#topnav {text-align: left; font-size: medium;}
 
 #footer {text-align: right;}
