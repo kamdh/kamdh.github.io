@@ -32,6 +32,6 @@ span.logo {
     text-align: left; letter-spacing: -1px; font-variant: small-caps; 
 }
 
-#topnav {text-align: left;}
+#topnav {text-align: left; font-size: large}
 
 #footer {text-align: right;}
