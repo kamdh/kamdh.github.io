@@ -15,6 +15,7 @@ span.logo {
 }
 
 #outside {margin: auto; width: 800px; }
+
 #logo {
     margin-bottom: 15px;
     padding: 0px; 
@@ -24,9 +25,13 @@ span.logo {
     background-size: auto;
 }
 #logo h1 {
-    margin: 0; padding: 0; 
+    padding-top: 140px;
+    padding-bottom: 4px;
+    /* margin: 0; padding: 0;  */
     color: #f29027;
     text-align: left; letter-spacing: -1px; font-variant: small-caps; 
 }
-#topnav {text-align: center;}
+
+#topnav {text-align: left;}
+
 #footer {text-align: right;}
