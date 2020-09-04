@@ -15,7 +15,7 @@ a:hover {text-decoration: underline;}
     color: #f29027;
 }
 
-#header span {
+span.header {
     background-color: #127260;
     padding: 5px;
 }
