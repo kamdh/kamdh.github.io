@@ -9,7 +9,13 @@ a {
     text-decoration: none;
 }
 a:hover {text-decoration: underline;}
-span.logo {
+
+
+#header {
+    color: #f29027;
+}
+
+#header span {
     background-color: #127260;
     padding: 5px;
 }
@@ -24,13 +30,20 @@ span.logo {
     background-repeat: no-repeat;
     background-size: auto;
 }
+
 #logo h1 {
     padding-top: 140px;
     padding-bottom: 4px;
-    /* margin: 0; padding: 0;  */
+    /* margin: 0; padding: 0;  */ 
     color: #f29027;
-    text-align: left; letter-spacing: -1px; font-variant: small-caps;
+    text-align: left;
+    /* letter-spacing: -1px; */
+    font-variant: small-caps;
     font-size: x-large;
+}
+
+#logo span {
+    background-color: #127260;
 }
 
 #topnav {text-align: left; font-size: medium;}
