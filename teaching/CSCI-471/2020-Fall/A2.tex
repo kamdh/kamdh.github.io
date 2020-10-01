@@ -64,13 +64,22 @@ $B \in \R^{m \times n}$,
 and $c \in \R$, 
 let $f(\vec u, \vec v) = \vec u^T A \vec u + \vec v^T B \vec u + c$. 
 Define the gradient 
-$\nabla_{\vec z} f(\vec u, \vec v) = 
-\begin{bmatrix} \frac{\partial f(u,v)}{\partial z_1} & \frac{\partial f(u,v)}{\partial z_2} & \dots & \frac{\partial f(u,v)}{\partial z_p} \end{bmatrix}^T$ for $\vec z \in \R^p$.
+$
+\nabla_{\vec z} f(\vec u, \vec v) = 
+\begin{bmatrix} 
+\frac{\partial f(\vec u, \vec v)}{\partial z_1} & 
+\frac{\partial f(\vec u, \vec v)}{\partial z_2} & 
+\dots & \frac{\partial f(\vec u, \vec v)}{\partial z_p} 
+\end{bmatrix}^T
+$ 
+for $\vec z \in \R^p$.
 \begin{enumerate}
 \item \points{1} What dimensions must $\vec u$ and $\vec v$ have for the definition of $f$ to make sense?
-\item \points{2} Explicitly write out the function $f(u, v)$ in terms of the components $A_{i,j}$ and $B_{i,j}$ using appropriate summations over the indices.
-\item \points{2} What is $\nabla_u f(u,v)$ in terms of the summations over indices \emph{and} vector notation?
-\item \points{2} What is $\nabla_v f(u,v)$ in terms of the summations over indices \emph{and} vector notation?
+\item \points{2} Explicitly write out the function $f(\vec u, \vec v)$ in terms of the components $A_{i,j}$ and $B_{i,j}$ using appropriate summations over the indices.
+\item \points{2} What is $\nabla_{\vec u} f(\vec u, \vec v)$ 
+  in terms of the summations over indices \emph{and} vector notation?
+\item \points{2} What is $\nabla_{\vec v} f(\vec u, \vec v)$ 
+  in terms of the summations over indices \emph{and} vector notation?
 \end{enumerate}
 
 
@@ -85,7 +94,7 @@ $f(\vec x) = \beta_0 + \beta_1 x_1 + \ldots + \beta_d x_d$.
   what changes about the function $f(\vec x)$?
 \end{enumerate}
 
-6.  \points{2} Write $\| X \vec \beta - \vec y \|^2$ in the same form as $f(u,v)$ in Problem 4,
+6.  \points{2} Write $\| X \vec \beta - \vec y \|^2$ in the same form as $f(\vec u, \vec v)$ in Problem 4,
 identifying $\vec u, \vec v, A, B$.
 Use your result to obtain the normal equations for ordinary least squares. 
 
@@ -93,12 +102,12 @@ Use your result to obtain the normal equations for ordinary least squares.
 7. Instead of just minimizing the squared error, as in ordinary least squares, suppose we decide
 to minimize the following {\em cost function}:
 \begin{align*}
-  C(\vec \beta) &= \| X \vec \beta - \vec y \|^2 + \alpha \| D(\vec \beta - \vec \beta_0) \|^2.
+  C(\vec \beta) &= \| X \vec \beta - \vec y \|^2 + \alpha \| D(\vec \beta - \vec \beta') \|^2.
 \end{align*}
 Here $X \in \R^{n \times d}$ is the usual data matrix, 
 $\alpha > 0$, $D = \mathrm{diag}(\sigma_1, \ldots, \sigma_d)$ 
 is a diagonal matrix with $\sigma_1 \geq \sigma_2 \geq \ldots > 0$, 
-and $\vec \beta_0$ is a vector with the same shape as $\vec \beta$.
+and $\vec \beta'$ is a vector with the same shape as $\vec \beta$.
 Consider the modified least-squares problem
 $
 \min_{\vec \beta \in \R^d} C(\vec \beta):
@@ -110,11 +119,11 @@ $
   Highlight the sizes of the matrices and which vector we are solving for.
 \item \points{2} Take $D = I$ (the identity matrix). 
   Explain what the ``extra term'' might be good for.
-  You may wish to explain using your formula for $\beta^*$ or using your intuition about norms and vectors.
+  You may wish to explain using your formula for $\vec \beta^*$ or using your intuition about norms and vectors.
   (Hint: What vectors $\vec \beta$ make the extra term small?)
-\item \points{2} Take $\beta_0 = 0$.   Explain what the extra term might be good for.
+\item \points{2} Take $\vec \beta' = 0$.   Explain what the extra term might be good for.
   You may wish to explain using your formula for $\beta^*$ or using your intuition about norms and vectors.
-\item \points{1} Now, for general $D$ and $\beta_0$, what is the effect of the extra term?
+\item \points{1} Now, for general $D$ and $\vec \beta'$, what is the effect of the extra term?
 \item \points{1} What is the effect of varying $\alpha$?
 \end{enumerate}
 
@@ -133,11 +142,11 @@ Your code must be submitted as described in the Syllabus.
 All plots should be legible with axes labeled and legends if there are multiple things plotted.
 
 \vspace{1em}
-8. (Basic {\tt numpy}) For the $A, b, c$ as defined in Problem 2, use
+8. (Basic {\tt numpy}) For the $A, \vec b, \vec c$ as defined in Problem 2, use
 NumPy to compute (take a screen shot of your answer):
 \begin{enumerate}
 \item \points{2} What is $A^{-1}$?
-\item \points{1} What is $A^{-1}b$? What is $Ac$?
+\item \points{1} What is $A^{-1} \vec b$? What is $A \vec c$?
 \end{enumerate}
 
 9. (Efficiency of linear systems solve)
@@ -170,7 +179,7 @@ with dimension $d=2$.
 \item \points{2} Write a function that returns polynomial features of degree $p$.
   Degree $p$ polynomials should include terms of degree $p-1$, etc.
   Include constant terms.
-  For simplicity, skip interaction terms.
+  {\bf For simplicity, skip interaction terms.}
 \item \points{3} On the same axes, plot the singular value spectrum for degree 0 through degree 10 polynomials
   using different colors or symbols to indicate degree.
 \item \points{2} Describe any trends you see. 
@@ -180,6 +189,7 @@ with dimension $d=2$.
 
 11. (Polynomial regression)
 Using the same data as Problem 10, we now turn to fitting a regression model.
+Reuse your code from Problem 10 and again ignore interaction terms.
 \begin{enumerate}
 \item \points{4} Write a function that evaluates the test error numerically.
   Generate a uniformly spaced grid of $n_{\rm test}$ points over 
