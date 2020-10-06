@@ -12,7 +12,7 @@
 
 
 \title{Assignment 2, CSCI 471/571 Fall 2020}
-\date{Due: October 10, 11:59 p.m.}
+\date{Due: October 12, 11:59 p.m.}
 \author{Kameron Decker Harris}
 
 \begin{document}
@@ -95,7 +95,9 @@ $f(\vec x) = \beta_0 + \beta_1 x_1 + \ldots + \beta_d x_d$.
 \end{enumerate}
 
 6.  \points{2} Write $\| X \vec \beta - \vec y \|^2$ in the same form as $f(\vec u, \vec v)$ in Problem 4,
-identifying $\vec u, \vec v, A, B$.
+identifying $\vec u, \vec v, A, B, c$.
+Note that $c$ will depend on one of the vectors, but you can still apply the result from Problem 4
+to compute the gradient.
 Use your result to obtain the normal equations for ordinary least squares. 
 
 \vspace{1em}
@@ -113,7 +115,7 @@ $
 \min_{\vec \beta \in \R^d} C(\vec \beta):
 $
 \begin{enumerate}
-\item \points{4} Compute $\nabla_{\vec \beta} C$. 
+\item \points{4} Compute $\nabla_{\vec \beta} C$. (Hint: Use Problem 4 again.)
 \item \points{4} Set $\nabla_{\vec \beta} C = 0$ and derive a linear system of equations
   that an optimizer $\vec \beta^*$ must satisfy. 
   Highlight the sizes of the matrices and which vector we are solving for.
