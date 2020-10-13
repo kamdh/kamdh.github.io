@@ -1,0 +1,247 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry} 
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\newcommand{\R}{\mathbb{R}} % real domain
+\newcommand{\points}[1]{\small\textcolor{magenta}{\emph{[#1 points]}} \normalsize}
+\setlength\parindent{0px}
+
+
+\title{Assignment 2, CSCI 471/571 Fall 2020}
+\date{Due: October 12, 11:59 p.m.}
+\author{Kameron Decker Harris}
+
+\begin{document}
+
+\maketitle
+
+{\bf Group work following the guidelines in the Syllabus is okay.}
+List your collaborators.
+
+Total points: 78
+
+\vspace{1em}
+The following sections should be computed by hand. Show your work.
+\section*{Linear algebra}
+1. (Rank)
+Let 
+$A = \begin{bmatrix} 1 & 2 & 2 \\ 1 & 0 & 4 \\ 1 & 1 & 3 \end{bmatrix}$ and
+$B = \begin{bmatrix} 1 & 2 & 3 \\ 1 & 0 & 1 \\ 1 & 1 & 2 \end{bmatrix}$.
+For each matrix $A$ and $B$,
+\begin{enumerate} 
+\item \points{2} What is its rank? 
+\item \points{2} What is a (minimal size) basis for its column span?
+\end{enumerate}
+\points{3} Compute an orthonormal basis for the column space of $A$.
+
+
+2. (Matrix multiplication) 
+Let 
+$A = \begin{bmatrix} 0 & 2 & 4 \\ 2 & 4 & 2 \\ 3 & 3 & 1 \end{bmatrix}$, 
+$\vec{b} = \begin{bmatrix} -2 & -2 & -4 \end{bmatrix}^T$, and 
+$\vec{c} = \begin{bmatrix} 1 & 1 & 1 \end{bmatrix}^T$.
+Compute:
+\begin{enumerate}
+\item \points{1} $A \vec{c}$
+\item \points{1} $A \vec{b}$
+\end{enumerate}
+
+3. (Hyperplanes) Assume $\vec w$ is an $d$-dimensional vector and $b$ is a scalar.
+A hyperplane in $\R^d$ is the set 
+$\{\vec x \in \R^d: \vec w^T \vec x + b = 0\}$.
+\begin{enumerate}
+\item \points{1} ($d=2$ example) Draw the hyperplane for $\vec w=[-1,2]^T$, $b=2$. Label your axes.
+\item \points{1} ($d=3$ example) Draw the hyperplane for $\vec w=[1,1,1]^T$, $b=0$. Label your axes.
+\end{enumerate}
+
+\section*{Gradients}
+4. For possibly non-symmetric matrices $A \in \R^{n \times n}$
+$B \in \R^{m \times n}$,
+and $c \in \R$, 
+let $f(\vec u, \vec v) = \vec u^T A \vec u + \vec v^T B \vec u + c$. 
+Define the gradient 
+$
+\nabla_{\vec z} f(\vec u, \vec v) = 
+\begin{bmatrix} 
+\frac{\partial f(\vec u, \vec v)}{\partial z_1} & 
+\frac{\partial f(\vec u, \vec v)}{\partial z_2} & 
+\dots & \frac{\partial f(\vec u, \vec v)}{\partial z_p} 
+\end{bmatrix}^T
+$ 
+for $\vec z \in \R^p$.
+\begin{enumerate}
+\item \points{1} What dimensions must $\vec u$ and $\vec v$ have for the definition of $f$ to make sense?
+\item \points{2} Explicitly write out the function $f(\vec u, \vec v)$ in terms of the components $A_{i,j}$ and $B_{i,j}$ using appropriate summations over the indices.
+\item \points{2} What is $\nabla_{\vec u} f(\vec u, \vec v)$ 
+  in terms of the summations over indices \emph{and} vector notation?
+\item \points{2} What is $\nabla_{\vec v} f(\vec u, \vec v)$ 
+  in terms of the summations over indices \emph{and} vector notation?
+\end{enumerate}
+
+
+\section*{Linear regression}
+5. In linear regression, we fit a linear function of the input $\vec x = [x_1, \ldots, x_d]^T$, a $d$-dimensional vector. 
+These functions are of the form 
+$f(\vec x) = \beta_0 + \beta_1 x_1 + \ldots + \beta_d x_d$.
+\begin{enumerate}
+\item \points{1} Show that we can write $f(\vec x) = \vec z^T \vec \beta$ for a suitable vector $\vec z$ 
+  and $\vec \beta = [\beta_0, \beta_1, \ldots, \beta_d]^T$.
+\item \points{2} Explain the role of the term $\beta_0$. If we don't include this term, 
+  what changes about the function $f(\vec x)$?
+\end{enumerate}
+
+6.  \points{2} Write $\| X \vec \beta - \vec y \|^2$ in the same form as $f(\vec u, \vec v)$ in Problem 4,
+identifying $\vec u, \vec v, A, B, c$.
+Note that $c$ will depend on one of the vectors, but you can still apply the result from Problem 4
+to compute the gradient.
+Use your result to obtain the normal equations for ordinary least squares. 
+
+\vspace{1em}
+7. Instead of just minimizing the squared error, as in ordinary least squares, suppose we decide
+to minimize the following {\em cost function}:
+\begin{align*}
+  C(\vec \beta) &= \| X \vec \beta - \vec y \|^2 + \alpha \| D(\vec \beta - \vec \beta') \|^2.
+\end{align*}
+Here $X \in \R^{n \times d}$ is the usual data matrix, 
+$\alpha > 0$, $D = \mathrm{diag}(\sigma_1, \ldots, \sigma_d)$ 
+is a diagonal matrix with $\sigma_1 \geq \sigma_2 \geq \ldots > 0$, 
+and $\vec \beta'$ is a vector with the same shape as $\vec \beta$.
+Consider the modified least-squares problem
+$
+\min_{\vec \beta \in \R^d} C(\vec \beta):
+$
+\begin{enumerate}
+\item \points{4} Compute $\nabla_{\vec \beta} C$. (Hint: Use Problem 4 again.)
+\item \points{4} Set $\nabla_{\vec \beta} C = 0$ and derive a linear system of equations
+  that an optimizer $\vec \beta^*$ must satisfy. 
+  Highlight the sizes of the matrices and which vector we are solving for.
+\item \points{2} Take $D = I$ (the identity matrix). 
+  Explain what the ``extra term'' might be good for.
+  You may wish to explain using your formula for $\vec \beta^*$ or using your intuition about norms and vectors.
+  (Hint: What vectors $\vec \beta$ make the extra term small?)
+\item \points{2} Take $\vec \beta' = 0$.   Explain what the extra term might be good for.
+  You may wish to explain using your formula for $\beta^*$ or using your intuition about norms and vectors.
+\item \points{1} Now, for general $D$ and $\vec \beta'$, what is the effect of the extra term?
+\item \points{1} What is the effect of varying $\alpha$?
+\end{enumerate}
+
+\begin{center}
+\rule{.5\linewidth}{1pt}
+\end{center}
+
+\section*{Programming exercises}
+
+For the following, you should program in Python and may use the
+{\tt numpy} package and {\tt matplotlib} for plotting, 
+but {\em you may not use any of the built-in least-squares solvers.}
+Any output from your program (displays of matrices or vectors and plots) 
+must be included in your pdf submission.
+Your code must be submitted as described in the Syllabus.
+All plots should be legible with axes labeled and legends if there are multiple things plotted.
+
+\vspace{1em}
+8. (Basic {\tt numpy}) For the $A, \vec b, \vec c$ as defined in Problem 2, use
+NumPy to compute (take a screen shot of your answer):
+\begin{enumerate}
+\item \points{2} What is $A^{-1}$?
+\item \points{1} What is $A^{-1} \vec b$? What is $A \vec c$?
+\end{enumerate}
+
+9. (Efficiency of linear systems solve)
+Use the starter code to generate random test problems
+with $A \in \R^{n \times n}$ and $\vec b \in \R^{n}$.
+Write a function that solves $A \vec x = \vec b$ for $\vec x \in \R^n$
+the following ways:
+\begin{enumerate}
+\item \points{1} Form the inverse $A^{-1}$ and use it to compute the solution.
+\item \points{1} Form the pseudoinverse $A^\dagger$ and compute the pseudoinverse solution.
+\item \points{1} Using the optimized function {\tt np.linalg.solve}.
+\end{enumerate}
+Call the functions {\tt solve\_system\_inv}, {\tt solve\_system\_pinv}, {\tt solve\_system\_numpy}.
+\begin{itemize}
+\item \points{2} Plot the runtime of all three functions
+  on a single plot, log-log axes, for logarithmically spaced
+  $n$ from 10 to 1000 (or larger if your computer doesn't complain). 
+  For each $n$, call function 10 times and report the average runtime.
+\item \points{2} Discuss any differences in scaling that you observe.
+Can you think of a case where you might want to use one of the slower methods?
+\end{itemize}
+
+10. (Polynomial features)
+Here we will investigate the effect of adding polynomial features to a synthetic dataset 
+with dimension $d=2$.
+\begin{enumerate}
+\item \points{1} Compute the SVD of the $X$ matrix using {\tt np.linalg.svd}. 
+  Plot the singular value spectrum (the vector of singular values ordered from largest to smallest),
+  with logarithmically scaled axis for the singular values. Include the plot here.
+\item \points{2} Write a function that returns polynomial features of degree $p$.
+  Degree $p$ polynomials should include terms of degree $p-1$, etc.
+  Include constant terms.
+  {\bf For simplicity, skip interaction terms.}
+\item \points{3} On the same axes, plot the singular value spectrum for degree 0 through degree 10 polynomials
+  using different colors or symbols to indicate degree.
+\item \points{2} Describe any trends you see. 
+\item \points{2} Explain how the trends you see in the singular value spectrum will manifest
+  in larger or smaller coefficients of $\vec \beta^*$ returned by ordinary least-squares.
+\end{enumerate}
+
+11. (Polynomial regression)
+Using the same data as Problem 10, we now turn to fitting a regression model.
+Reuse your code from Problem 10 and again ignore interaction terms.
+\begin{enumerate}
+\item \points{4} Write a function that evaluates the test error numerically.
+  Generate a uniformly spaced grid of $n_{\rm test}$ points over 
+  $[0,1]^2 = \{\vec x \in \R^2: 0 \leq x_1, x_2 \leq 1\}$.
+  For each point, evaluate the true function and the estimate returned by polynomial regression,
+  and compute the squared error.
+  The function should return the mean square error (MSE) over all $n_{\rm test}$ points.
+  See the function prototype provided.
+\item \points{4}
+  Plot the training MSE (evaluated over the $n$ samples used to fit the polynomial)
+  and test MSE for polynomial degrees 0--10.
+  Make separate plots for $n_{\rm test} = 16, 64, 144$.
+  What is the optimal degree?
+\item \points{2}
+  Change the number of samples used to fit to $n = 100$. Do the results change?
+\item \points{1}
+  Why could we get away with ignoring interaction terms for this target function?
+\end{enumerate}
+
+12. (Interpretation and covariance)
+Start from the example code which loads a dataset of median housing prices (our targets $y_i$)
+and a number of predictors (the features $\vec x_i$).
+For a description of the predictors included, see \url{http://lib.stat.cmu.edu/datasets/boston}.
+We use the same ordering and MEDV is the target.
+\begin{enumerate}
+\item \points{1} Fit the entire dataset using ordinary least squares with an intercept term.
+  Report your coefficients $\vec \beta^*$.
+\item \points{1} Which coefficients are most important for the linear function? Least important?
+\item \points{2} Compute the sample covariance matrix for the data. This is defined as 
+$$
+\frac{1}{n-1} \sum_{i=1}^n (\vec x_i - \vec \mu)(\vec x_i - \vec \mu)^T,
+$$
+where $\vec \mu = \frac{1}{n} \sum_{i=1}^n \vec x_i$ is the sample mean.
+Print your result.
+\item \points{1} Show that, when the mean is zero (i.e.\ the data are {\em centered}), that the covariance 
+  matrix appears in the normal equations. {\bf Do this math by hand.}
+\item \points{4} You have just started a data scientist job at the massive real estate website Zilfin.
+  Your job is to use machine learning to set the housing prices that appear on Zilfin's house browser,
+  an essential part of your business. 
+  You have been handed town-level housing data with similar attributes to these
+  (read the description of the dataset linked above) along with attributes of the house in question.
+  
+  Do you have any qualms about estimating prices in this way? 
+  Should certain columns of these data be left out?
+  Even if we leave out certain columns, what does the covariance matrix tell you about how the left out
+  data might correlate with the response?
+  Is it fair to price houses this way?
+
+  Write 2--3 paragraphs ($\approx$200--350 words).
+\end{enumerate}
+
+\end{document}
+
