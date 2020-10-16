@@ -174,7 +174,7 @@ in the ESL book.
   using the parameters you calculated in step 1. {\bf Do not recalculate them with the testing data!}
   Is the testing data standardized ``as well'' as the training data?
 \item \points{3} Write a function that takes in the standardized data along with a ridge 
-  parameter $\alpha$ (we aren't calling it {\tt lambda} because that's a reserved word in python)
+  parameter $\alpha$ ({\tt alpha}, we aren't calling it {\tt lambda} because that's a reserved word in python)
   that must be positive.
   Your function should return a vector $\vec \beta = [\beta_0, \beta_1, \ldots, \beta_d]^T$ of length $d +1$.
   When $X$ is augmented to include a column of 1s (thus allowing us to fit the intercept term $\beta_0$),
@@ -184,7 +184,7 @@ in the ESL book.
   $$
   where $D = \mathrm{diag}(0, 1, \ldots, 1)$ is a $(d+1) \times (d+1)$ diagonal matrix that ensures
   the ridge penalty misses $\beta_0$.
-  Your function should solve this equation to find $\beta_{\rm ridge}$.
+  Your function should solve this equation to find $\vec \beta_{\rm ridge}$.
 \item \points{3}
   Use your function with $\alpha = 1$ to fit an estimator to the standardized data.
   Report the mean squared error (MSE) over the training and testing sets.
