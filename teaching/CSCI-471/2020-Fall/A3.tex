@@ -116,6 +116,9 @@ called jPCA and applied it to the data.
 
 \vspace{1em}
 We will apply standard PCA to the dataset provided. There is starter code to load the $X$ matrix.
+This matrix is of size $n \times d$, where
+$n = $ number of neurons by $d = $ number of time points.
+Each entry of the matrix $X_{ij}$ is the firing rate (number of spikes the neuron emits, a way to quantify how active it is) of neuron $i$ at time point $j$.
 Applying PCA to this example will result in left singular vectors (neuron principal components)
 that capture covariation among neurons and right singular vectors (time principal compoents)
 that capture covariation among points in time.
