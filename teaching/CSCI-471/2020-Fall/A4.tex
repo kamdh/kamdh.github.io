@@ -1,0 +1,298 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry} 
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[]{algorithm2e}
+
+\newcommand{\R}{\mathbb{R}} % real domain
+\newcommand{\points}[1]{\small\textcolor{magenta}{\emph{[#1 points]}} \normalsize}
+\setlength\parindent{0px}
+
+
+\title{Assignment 3, CSCI 471/571 Fall 2020}
+\date{Due: November 1, 11:59 p.m.}
+\author{Your name here} 
+
+\begin{document}
+
+\maketitle
+
+{\bf Group work following the guidelines in the Syllabus is okay.}\\
+Github username: user\_name\\
+List your collaborators.
+
+\vspace{1em}
+Total points: 58\\
+Problems 2 \& 3 are adapted from Kevin Jamieson and Jamie Morgenstern's course at UW.
+
+\vspace{1em}
+The following section should be computed by hand. Show your work.
+\section*{Coordinate descent}
+
+\vspace{1em}
+1. \points{5} (Coordinate descent for least-squares)
+Coordinate descent is an optimization method that minimizes over one coordinate
+at a time: 
+rather than try to update all coordinates in the vector $\vec w$ at once,
+it updates $w_0$, $w_1$, etc.\ sequentially and loops until convergence.
+In pseudocode, the basic coordinate descent algorithm is:
+\begin{algorithm}[h]
+  \KwData{cost function $C:\R^d \to \R$, initial guess $\vec w \in \R^d$}
+  \KwResult{$\vec w^*$ approximate solution to $\min_{\vec w \in \R^d} C(\vec w)$}
+  \While{not converged}{
+    \For{$i = 1, \ldots, d$}{
+      Update $w_i = \arg \min_{w_i} C(\vec w)$, where $w_j$ for $j \neq i$ are fixed
+    }
+  }
+  \caption{Coordinate descent}
+  \label{alg:cd}
+\end{algorithm}
+
+In general, Algorithm~\ref{alg:cd} is most useful when the minimization over 
+a single coordinate can be solved very easily.
+We will show that this is the case for least squares.
+Take $C(\vec w) = \| X \vec w - \vec y\|^2$ to be the least-squares loss,
+with data $X \in \R^{n \times d}$ and $\vec y \in \R^n$ as usual.
+Derive a formula for the update step in the coordinate descent algorithm.
+
+\vspace{1em}
+(Hints: This is just a one-variable optimization problem for $w_i$.
+Set $\frac{\partial C}{\partial w_i} = 0$ and solve for $w_i$,
+treating the other $w_j$ for $j \neq i$ as constants. 
+This equation should be of the form $w_i a_i - b_i = 0$,
+which has the solution $w_i = b_i / a_i$.
+Feel free use what you already know about the gradient of $C$ from past homework
+and in-class notes.)
+
+\section*{Lasso}
+
+For the following, you should program in Python and may use the
+{\tt numpy} package and {\tt matplotlib} for plotting, and {\tt pandas} for loading data,
+but {\em you may not use any of the built-in least-squares solvers or anything from 
+{\tt sklearn}.}
+Any output from your program (displays of matrices or vectors and plots) 
+must be included in your pdf submission.
+Your code must be submitted as described in the Syllabus.
+All plots should be legible with axes labeled and legends if there are multiple things plotted.
+
+\vspace{1em}
+Coordinate descent is very useful for solving for the Lasso solution
+\begin{equation*}
+  \vec \beta_{\rm lasso} 
+  = \arg \min_{\vec \beta} \sum_{i=1}^n \left(
+    \sum_{j=1}^d \vec X_{ij} \beta_j + \beta_0 - y_i \right)^2 
+  + \lambda \sum_{i=1}^d | \beta_i |.
+\end{equation*}
+Note that the penalty term does not affect the intercept $\beta_0$.
+It turns out that one can analytically derive an update formula
+for $\beta_i$ that takes into account the penalty term.
+This leads to the following algorithm that you will be implementing:
+\begin{algorithm}[h]
+  \KwData{covariates $X$ (without adding the column of 1s), 
+    labels $\vec y$, initial guess $\vec \beta$, penalty $\lambda \geq 0$}
+  \KwResult{$\vec \beta^*$ approximate Lasso solution}
+  \While{not converged}{
+    $\beta_0 = \frac{1}{n} \sum_{i=1}^n (y_i - \sum_{j=1}^d X_{ij} \beta_j)$\\
+    \For{$i = 1, \ldots, d$}{
+      $a_i = 2 \sum_{j=1}^n X_{ji}^2$\\
+      $b_i = 2 \sum_{j=1}^n X_{ji} \left( y_j - \beta_0 - \sum_{k \neq i} X_{jk} \beta_k \right)$\\
+      Update $\beta_i = T_\lambda(b_i / a_i)$.
+    }
+  }
+  \caption{Coordinate descent for Lasso}
+  \label{alg:lasso}
+\end{algorithm}
+
+The update is written in terms of the {\em soft-thresholding} function:
+\begin{equation*}
+T_\lambda(z) = \begin{cases}
+          z + \lambda & \mbox{if } z < -\lambda \\
+          0 & \mbox{if } z \in [-\lambda, \lambda] \\
+          z - \lambda & \mbox{if } z > \lambda
+        \end{cases}.
+\end{equation*}
+
+2. (Coordinate descent math for Lasso)
+\begin{enumerate}
+\item \points{2} Draw a picture (by hand or computer) of the soft thresholding function
+  $T_\lambda (z)$. 
+  Be sure to show the effect of $\lambda$.
+\item \points{2} When $\lambda = 0$, show that you recover
+  the coordinate descent update equations for least-squares from problem 1.
+\end{enumerate}
+
+Implement a Lasso solver via the coordinate descent method
+detailed in Algorithm~\ref{alg:lasso}.
+Start from the code included.
+You have two test conditions that should help you debug any errors:
+\begin{itemize}
+\item $\lambda = 0$: In this case, your algorithm should converge to the 
+  least-squares solution $\vec \beta_{\lambda} = \vec \beta_{\rm OLS}$.
+\item $\lambda \geq \lambda_{\rm max}$: In this case, your algorithm should converge
+  to the solution $\vec \beta = 0$.
+  The value of this constant is
+  \begin{equation*}
+    \lambda_{\rm max} = \max_{k=1,\ldots,d} 2 \left| 
+      \sum_{i=1}^n X_{ik} \left( y_i - \frac{1}{n} \sum_{j=1}^n y_j \right) \right|.
+  \end{equation*}
+\end{itemize}
+We will test your algorithm with these values of $\lambda$ as well as an intermediate
+value of $\lambda$ to determine whether is is working.
+Your grade, however, will be dependent on the applications below.
+
+Some other useful hints for implementing this method:
+\begin{itemize}
+\item You may precompute $a_i$ since this never changes throughout the iterations.
+\item Vectorize your code rather than relying on loops for summation,
+  like when computing $b_i$. 
+  In python, loops are slow, whereas numpy is highly optimized. 
+\item Print the cost after every iteration (end of inner for loop)
+    and ensure that this is decreasing.
+    It also should be decreasing with every update inside the for loop.
+\item If you have solved Lasso for $\lambda = 1$ and want to solve it for 
+  a nearby $\lambda$, say $\lambda = 2$, a good approach is to initialize
+  with the solution you got for $\lambda = 1$.
+\item For a convergence criterion, use 
+  $\| \vec \beta - \vec\beta_{\rm old} \|_\infty = \max_{i} |\beta_i - (\beta_{\rm old})_i| \leq \delta$,
+  where $\vec \beta_{\rm old}$ was the previous iteration of the outer (while) loop.
+  Don't neglect to store the older iterate before you start updating $\vec \beta$
+  so that you can evaluate the convergence criterion. 
+  If your algorithm is taking forever to converge, 
+  it could be that your $\delta$ is too small.
+\item When you apply your algorithm to real and fake data in the next two questions,
+  set $\delta$ small enough so that you are getting to convergence.
+\end{itemize}
+
+3. (Testing Lasso on fake data)
+In class, we saw that the Lasso is good at finding sparse solutions,
+which is a great prior if we have reason to believer that only a few
+features are enough to predict $y$.
+Let $\vec x \in \R^d, y \in \R$, and $k < d$ be a sparsity parameter.
+We will generate the data $(\vec x_i, y_i)_{i=1}^n$ 
+with the model $y_i = \vec x_i^T \vec w + \epsilon_i$, where
+\begin{equation*}
+w_j =
+\begin{cases}
+  j/k & \mbox{if } j \leq k \\
+  0 & \mbox{otherwise},
+\end{cases}  
+\end{equation*}
+the noise $\epsilon_i \sim \mathcal{N}(0, \sigma^2)$ are iid Gaussian noise
+with mean 0 and variance $\sigma^2$. 
+Note that we can generate a vector of noise with these characteristics by
+{\tt epsilon = np.random.randn(n) * sigma}.
+
+\vspace{1em}
+For this problem, set $n = 500, d= 1000, k=100$, and $\sigma =1$.
+Generate the data by setting $X_{ij} \sim \mathcal{N}(0,1)$
+and use the model for $\vec y$.
+
+\begin{enumerate}
+\item \points{10} Take your synthetic data and solve mutiple Lasso problems
+  on a regularization path starting from $\lambda_{\rm max}$ 
+  and descreasing lambda to until nearly all features are selected
+  (i.e.\ until the number of nonzeros in the solution $\| \vec \beta \|_0 = 0.99 d$).
+  Decrease each value of $\lambda$ by the constant ratio 1.5,
+  so that you end up with a exponential range
+  $\lambda_{\rm max}, \frac{\lambda_{\rm max}}{1.5}, 
+  \frac{\lambda_{\rm max}}{(1.5)^2},$ etc.
+  In plot 1, plot the number of nonzeros on the y-axis versus $\lambda$ on the x-axis.
+  Use logarithmic scaling on the x-axis: {\tt plt.xscale('log')}.
+\item \points{10} For each value of $\lambda$, record the false discovery rate (FDR),
+  defined as the number of incorrect nonzeros in your estimate $\vec \beta$
+  divided by $k$,
+  along with the true positive rate (TPR),
+  defined as the number of correct nonzeros in your estimate $\vec \beta$
+  divided by $k$.
+  In plot 2, plot TPR (y-axis) versus FDR (x-axis). 
+  Make both axes go from 0 to 1 and color your points by the value of $\lambda$.
+  The best possible situation would be to have high TPR and low FDR, 
+  which is in the upper-left corner of the plot.
+\item \points{5} Talk about the effect of $\lambda$ in these two plots.
+\end{enumerate}
+
+4. (Testing Lasso on real data)
+Now we will put this to work on some real data, stored in
+``crime-train.txt'' and ``crime-test.txt''.
+You can read these files with:
+\begin{verbatim}
+import pandas as pd
+df_train = pd.read_table("crime-train.txt")
+df_test = pd.read_table("crime-test.txt")
+\end{verbatim}
+This loads the data into two Pandas DataFrame objects.
+DataFrame objects are similar to data frames used in the statistical programming
+language R.
+You can think of them as objects similar to a CSV of data. 
+The include an ``index'' for every row and labels for every column
+and allow the storage of columns of multiple types.
+In our dataset, however, all the types are floats, which is good since
+we're going to use this dataset for regression.
+Here are a few commands that will get you working with Pandas for this assignment:
+\begin{verbatim}
+df.head()                   # Print the first few lines of DataFrame df.
+df.index                    # Get the row indices for df.
+df.columns                  # Get the column indices.
+df['foo']                   # Return the column named 'foo'.
+df.drop('foo', axis = 1)    # Return all columns except 'foo'.
+df.values                   # Return the values as a Numpy array.
+df['foo'].values            # Grab column foo and convert to Numpy array.
+df.iloc[:3,:3]              # Get the first 3 rows and cols like Numpy.
+\end{verbatim}
+The data consist of local crime statistics for 1,994 US communities.
+The response $y$ is the crime rate.  
+The name of the response variable is `ViolentCrimesPerPop', 
+and it is held in the first column of {\tt df\_train} and {\tt df\_test}.
+There are 95 features. 
+These features include possibly relevant variables such as the 
+size of the police force orthe percentage of children that graduate high school.
+The data have been standardized and split into a training and testset with 
+1,595 and 399 entries, respectively.
+
+\vspace{1em}
+We’d like  to  use  this  training  set  to  fit  a  model  which  can  predict  the  crime  rate  in  new  communities  and evaluate model performance on the test set.  
+As there are a considerable number of input variables, overfitting is a serious issue.  
+In order to avoid this, use the coordinate descent LASSO algorithm 
+you just implemented in the previous problem.
+
+\vspace{1em}
+Begin by running the LASSO solver with
+$\lambda = \lambda_{\rm max}$
+defined above.  
+For the initial $\vec \beta$ use 0.  
+Then, cut shrink $\lambda$ by a factor of 2 and run again, 
+but this time pass in the values of $\vec \beta$ from your previous solution as 
+your initial weights.  
+This is faster than initializing with 0 weights each time.  
+Continue the process of shrinking by a factor of 2 until $\lambda< 0.01$.
+For all plots, use log-scaling for the x-axis which represents $\lambda$.
+\begin{enumerate}
+\item \points{4} Plot the number of nonzeros versus $\lambda$ (same as 3.1).
+\item \points{4} Plot the regularization paths (values of the coefficients in $\beta$
+  as a function of $\lambda$, like in ISLR Figure 6.6) for just the coefficients
+  corresponding to `gePct12t29', `pctWSocSec', `pctUrban', `agePct65up', and `householdsize'.
+\item \points{4} Plot the mean squared error on the training and test data versus $\lambda$.
+\item \points{4} Sometimes a larger value of $\lambda$ performs nearly as well 
+  as a smaller value, but a larger value will select fewer variables 
+  and perhaps be more interpretable.  
+  Inspect the weights (on features) for $\lambda= 30$.W
+  hich feature variable had the largest (most positive) Lasso coefficient?  
+  What about the most negative?
+  Discuss briefly.  
+  A description of the variables in the data set can be found here:
+  \url{http://archive.ics.uci.edu/ml/machine-learning-databases/communities/communities.names}.
+\item \points{4} Suppose there was a large negative weight on `agePct65up'
+  and upon seeing this result, a politician suggests policies that encourage 
+  people over the age of 65 to move to high crime areas in an effort to reduce crime.
+  What is the (statistical) flaw in this line of reasoning?
+\item \points{4} ``Predictive policing'' is when police departments use various
+  datasets to try and predict where crimes will occur so that they can focus their
+  resources in those areas. Discuss (1--2 paragraphs) whether or not you
+  agree with the approach, and possible pitfalls you might see.
+\end{enumerate}
+
+\end{document}
+
