@@ -13,7 +13,7 @@
 
 
 \title{Assignment 3, CSCI 471/571 Fall 2020}
-\date{Due: November 1, 11:59 p.m.}
+\date{Due: November 2, 11:59 p.m.}
 \author{Your name here} 
 
 \begin{document}
@@ -83,7 +83,7 @@ Coordinate descent is very useful for solving for the Lasso solution
 \begin{equation*}
   \vec \beta_{\rm lasso} 
   = \arg \min_{\vec \beta} \sum_{i=1}^n \left(
-    \sum_{j=1}^d \vec X_{ij} \beta_j + \beta_0 - y_i \right)^2 
+    \sum_{j=1}^d X_{ij} \beta_j + \beta_0 - y_i \right)^2 
   + \lambda \sum_{i=1}^d | \beta_i |.
 \end{equation*}
 Note that the penalty term does not affect the intercept $\beta_0$.
@@ -99,7 +99,7 @@ This leads to the following algorithm that you will be implementing:
     \For{$i = 1, \ldots, d$}{
       $a_i = 2 \sum_{j=1}^n X_{ji}^2$\\
       $b_i = 2 \sum_{j=1}^n X_{ji} \left( y_j - \beta_0 - \sum_{k \neq i} X_{jk} \beta_k \right)$\\
-      Update $\beta_i = T_\lambda(b_i / a_i)$.
+      Update $\beta_i = T_\lambda(b_i) / a_i$.
     }
   }
   \caption{Coordinate descent for Lasso}
@@ -203,10 +203,10 @@ and use the model for $\vec y$.
   Use logarithmic scaling on the x-axis: {\tt plt.xscale('log')}.
 \item \points{10} For each value of $\lambda$, record the false discovery rate (FDR),
   defined as the number of incorrect nonzeros in your estimate $\vec \beta$
-  divided by $k$,
+  divided by $\| \vec \beta \|_0$,
   along with the true positive rate (TPR),
   defined as the number of correct nonzeros in your estimate $\vec \beta$
-  divided by $k$.
+  divided by $\| \vec \beta \|_0$.
   In plot 2, plot TPR (y-axis) versus FDR (x-axis). 
   Make both axes go from 0 to 1 and color your points by the value of $\lambda$.
   The best possible situation would be to have high TPR and low FDR, 
