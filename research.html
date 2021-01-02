@@ -59,15 +59,50 @@ content="text/html; charset=windows-1252" />
 
   <h3>Current Projects</h3>
 
-  <p><b>Human electrocorticography recordings (ECoG)</b>
-    I am analyzing human ECoG data in collaboration
-    with <a href="https://www.bingbrunton.com/data">Bing Brunton's lab</a>.
-    These are long-term (about a week long) recordings with multiple
-    electrodes placed on the surface of the brain.
-    In addition, we have a team annotating that data using simultaneously
-    audio and video which allows us to track the patients' behavior.
-    Stay tuned for updates!
+  <p><b>Theoretical neural networks:</b>
+    Artificial neural networks have enjoyed a huge renaissance in the last decade.
+    Theory is starting to catch up to the enormous empirical success of these networks.
+    A promising connection is the similarity of wide neural networks to kernel methods,
+    which has shown success in explaining partially untrained and fully-trained networks
+    in certain regimes ("random features" and "neural tangent kernel" are keywords).
   </p>
+  <p>These theories have mostly been developed for very simple neural architectures,
+    like when the weights are drawn as independent Gaussians with equal variance.
+    We have found it illuminating to ask, What changes when you add structures that are found
+    in successful biological neuronal systems?
+  </p>
+  <p>
+    For example sparsity, an important conserved property of cerebellum and mushroom body
+    brain areas, leads to the network approximating additive functions.
+    This constraint leads to faster learning from fewer examples in such networks.
+    Similarly, allowing the weights to reproduce known neuronal tuning properties from V1
+    leads to improved performance on simple image recognition tasks (work with Biraj Pandey and
+    <a href="https://www.bingbrunton.com/">Bing Brunton</a>).
+  </p>
+  
+  <p>
+    Our view of networks as function approximators is uncommon in computational neuroscience,
+    but offers many advantages.
+    The kernel associated with a network architecture tells you important <i>geometrical</i>
+    properties about the functions that it can approximate.
+  </p>
+  <img src="images/sparse_rf_drawing.png" 
+       alt="A schematic of sparse random features and additive functions" 
+       width="90%"
+       align="center" 
+       style="background-color:white;
+              padding-top: 15px; 
+	      padding-bottom: 15px; 
+	      padding-right: 15px; 
+	      padding-left: 15px" />
+  <img src="images/full_mnist_classification.png" 
+       alt="V1-inspired random features outperform classical ones" 
+       width="90%"
+       align="center" 
+       style="padding-top: 15px; 
+	      padding-bottom: 15px; 
+	      padding-right: 15px; 
+	      padding-left: 15px" />
 
   <hr align="center" noshade="noshade" width="80%"/>
 
