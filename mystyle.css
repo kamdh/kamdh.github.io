@@ -31,9 +31,9 @@ span.header {
     background-size: auto;
 }
 
-#logo h1 {
-    padding-top: 140px;
-    padding-bottom: 4px;
+#logo header {
+    padding-top: 100px;
+    padding-bottom: 0px;
     /* margin: 0; padding: 0;  */ 
     color: #f29027;
     text-align: left;
@@ -41,6 +41,11 @@ span.header {
     font-variant: small-caps;
     font-size: x-large;
 }
+
+#logo subtitle {
+    padding-bottom: 10px;
+    font-variant: small-caps;
+}   
 
 #logo span {
     background-color: #127260;
