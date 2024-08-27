@@ -59,10 +59,13 @@ content="text/html; charset=windows-1252" />
     We also do our best to <i><b>know the biology</b></i> of the systems we study.
     See my <a href="publist.html">Publications</a> page for papers.
   </p>
-  <p>Slides from a number of my talks are <a href="presentations/index.html">available here</a>.</p>
+  <p>Slides and a few videos from a number of my talks are <a href="presentations/index.html">available here</a>.</p>
 
-  <h3>Current Projects</h3>
-
+  <h3>Active Projects</h3>
+  <p>
+    Warning, these may be out-of-date!
+  </p>
+  
   <p><b>Theoretical neural networks:</b>
     Artificial neural networks have enjoyed a huge renaissance in the last decade.
     Theory is starting to catch up to the enormous empirical success of these networks.
@@ -111,67 +114,6 @@ content="text/html; charset=windows-1252" />
   <hr align="center" noshade="noshade" width="80%"/>
 
 
-  <p><b>Brain network inference:</b>
-    Together with Stefan Mihalas and others at the 
-    <a href="http://alleninstitute.org/">
-      Allen Institute for Brain Science</a>,
-    I am improving the mathematical techniques used to
-    analyze tracing experiments.
-    In these experiments, 
-    mice are injected with a modified virus which travels along
-    axons and causes them to express green fluourescent protein,
-    highlighting which areas are targets of the injection site.
-    We use the spatial regularities and symmetries
-    of projections to "fill in" undersampled areas,
-    leading to unprecedentedly detailed whole-brain connectivity matrices.
-    <ul>
-      <li /> <a href="http://download.alleninstitute.org/publications/A_high_resolution_data-driven_model_of_the_mouse_connectome/">Download the voxel network</a> or the Python package
-      <a href="https://github.com/AllenInstitute/mouse_connectivity_models/">mcmodels</a>
-      <li /> Here is 
-        <a href="./posters/2016-12-1_NIPS_connectome.pdf">the poster
-        I presented at NIPS, 2016</a>.
-      <li /> I was a TA for the Summer Workshop on the Dynamic Brain in 2016: 
-        <a href="https://www.youtube.com/watch?v=OmYkj1FImpI">video</a>
-    </ul>
-    <!-- <ol> -->
-    <!--   <li />J Knox, KD Harris, N Graddis, JD Whitesell, H Zeng, JA Harris, -->
-    <!--   E Shea-Brown, S Mihalas. -->
-    <!--   High resolution data-driven model of the mouse connectome. -->
-    <!--   In review. 2018. -->
-    <!--   [<a href="https://doi.org/10.1101/293019">preprint</a>] -->
-    <!--   <li /> -->
-    <!--   KD Harris, S Mihalas, ET Shea-Brown.  -->
-    <!--   High resolution neural connectivity from incomplete tracing data -->
-    <!--   using nonnegative spline regression. -->
-    <!--   NIPS, 2016. -->
-    <!--   [<a href="https://arxiv.org/abs/1605.08031">arXiv</a>] -->
-    <!-- </ol> -->
-  </p>
-
-  <center>
-    <iframe width="100%" height="400" src="https://www.youtube.com/embed/woKJgBmtyto" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-  </center>
-
-  <img src="images/mouse_view.png" 
-       alt="A schematic of mesoscale connectivity inference" 
-       width="90%"
-       align="center" 
-       style="padding-top: 15px; 
-	      padding-bottom: 15px; 
-	      padding-right: 15px; 
-	      padding-left: 15px" />
-
-  <hr align="center" noshade="noshade" width="80%"/>
-
-
-  <img src="images/prebot-model-fig.png" 
-       alt="Example output from my preBot model"
-       width="50%"
-       align="right" 
-       style="padding-top: 0px; 
-	      padding-bottom: 10px; 
-	      padding-right: 40px; 
-	      padding-left: 15px" />
   <p><b>Respiratory rhythms:</b>
     The pre-Botzinger complex (preBot) is an area of the brainstem
     which is essential for breathing...
@@ -192,10 +134,13 @@ content="text/html; charset=windows-1252" />
     is an example of emergent synchronization of neural activity.
     We specifically look at the role of inhibition and network
     connectivity in shaping the resulting rhythm.
+    We have also modeled the effects of opioids on breathing.
   <ul>
     <li /> This work is a collaboration with 
     <a href="https://www.seattlechildrens.org/research/centers-programs/integrative-brain-research/our-labs/ramirez-lab/">
-      Nino Ramirez's group</a> 
+      Nino Ramirez</a> and
+    <a href="https://www.seattlechildrens.org/research/centers-programs/integrative-brain-research/our-labs/baertsch-lab/">
+      Nathan Baertsch</a>
     at Seattle Children's Research Institute.
   </ul>
   <!-- <ol> -->
@@ -219,7 +164,7 @@ content="text/html; charset=windows-1252" />
 	      padding-right: 15px; 
 	      padding-left: 15px" />
   <p>
-    <b>Random graphs and percolation/contagion:</b>
+    <b>Random graphs, contagion, and machine learning:</b>
     We examine the topology of random networks with
     arbitrary correlations between nodes of different types.
     From this, we can determine whether spreading is possible
@@ -305,8 +250,69 @@ content="text/html; charset=windows-1252" />
 
   <h3 id="old">Older Research</h3>
   
-  <p>These projects were started before my PhD.</p>
+  <p>These projects are no longer active, but there may still be interesting future directions to pursue.</p>
 
+  <p><b>Brain network inference:</b>
+    Together with Stefan Mihalas and others at the 
+    <a href="http://alleninstitute.org/">
+      Allen Institute for Brain Science</a>,
+    I am improving the mathematical techniques used to
+    analyze tracing experiments.
+    In these experiments, 
+    mice are injected with a modified virus which travels along
+    axons and causes them to express green fluourescent protein,
+    highlighting which areas are targets of the injection site.
+    We use the spatial regularities and symmetries
+    of projections to "fill in" undersampled areas,
+    leading to unprecedentedly detailed whole-brain connectivity matrices.
+    <ul>
+      <li /> <a href="http://download.alleninstitute.org/publications/A_high_resolution_data-driven_model_of_the_mouse_connectome/">Download the voxel network</a> or the Python package
+      <a href="https://github.com/AllenInstitute/mouse_connectivity_models/">mcmodels</a>
+      <li /> Here is 
+        <a href="./posters/2016-12-1_NIPS_connectome.pdf">the poster
+        I presented at NIPS, 2016</a>.
+      <li /> I was a TA for the Summer Workshop on the Dynamic Brain in 2016: 
+        <a href="https://www.youtube.com/watch?v=OmYkj1FImpI">video</a>
+    </ul>
+    <!-- <ol> -->
+    <!--   <li />J Knox, KD Harris, N Graddis, JD Whitesell, H Zeng, JA Harris, -->
+    <!--   E Shea-Brown, S Mihalas. -->
+    <!--   High resolution data-driven model of the mouse connectome. -->
+    <!--   In review. 2018. -->
+    <!--   [<a href="https://doi.org/10.1101/293019">preprint</a>] -->
+    <!--   <li /> -->
+    <!--   KD Harris, S Mihalas, ET Shea-Brown.  -->
+    <!--   High resolution neural connectivity from incomplete tracing data -->
+    <!--   using nonnegative spline regression. -->
+    <!--   NIPS, 2016. -->
+    <!--   [<a href="https://arxiv.org/abs/1605.08031">arXiv</a>] -->
+    <!-- </ol> -->
+  </p>
+
+  <center>
+    <iframe width="100%" height="400" src="https://www.youtube.com/embed/woKJgBmtyto" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </center>
+
+  <img src="images/mouse_view.png" 
+       alt="A schematic of mesoscale connectivity inference" 
+       width="90%"
+       align="center" 
+       style="padding-top: 15px; 
+	      padding-bottom: 15px; 
+	      padding-right: 15px; 
+	      padding-left: 15px" />
+
+  <hr align="center" noshade="noshade" width="80%"/>
+
+
+  <img src="images/prebot-model-fig.png" 
+       alt="Example output from my preBot model"
+       width="50%"
+       align="right" 
+       style="padding-top: 0px; 
+	      padding-bottom: 10px; 
+	      padding-right: 40px; 
+	      padding-left: 15px" />
 
     <img src="happiness/happiness.png" 
          alt="County happiness, no thresholding" 
